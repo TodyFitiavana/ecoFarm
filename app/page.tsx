@@ -1,11 +1,15 @@
-'use client'
+"use client";
 
+import LandingNav from "@/components/common/navbars/LandingNav";
 import React from "react";
 
-
-const page:React.FC = () : JSX.Element => {
+const Landing: React.FC = (): JSX.Element => {
   return (
-    <div>Helllo</div>
+    <div>
+      <LandingNav />
+      Hello
+    </div>
   );
 };
-export default page;
+
+export default Landing;

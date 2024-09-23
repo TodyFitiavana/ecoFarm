@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import LandingNav from "@/components/common/navbars/LandingNav";
-import {Montserrat} from "next/font/google"
+import { Montserrat } from "next/font/google";
+import "cal-sans";
 
-const montserrat = Montserrat ({
+const montserrat = Montserrat({
   subsets: ["latin"],
-  display:"swap",
+  display: "swap",
+  weight: ["500"],
 });
 
 export const metadata: Metadata = {
@@ -21,7 +22,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={montserrat.className}>
       <body>
-        <LandingNav />
         <main>{children}</main>
       </body>
     </html>
