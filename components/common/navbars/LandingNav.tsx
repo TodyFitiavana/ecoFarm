@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
@@ -25,13 +26,18 @@ const LandingNav: FC = (): JSX.Element => {
             {navList.map((item, index) => (
               <NavigationMenuItem key={index}>
                 <Link href={item.url as string} legacyBehavior passHref>
-                  <NavigationMenuLink>{item.label}</NavigationMenuLink>
+                  <NavigationMenuLink className="text-secondary font-medium">
+                    {item.label}
+                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        <Button>Se connecter</Button>
+        <div className="button">
+          <Button variant="ghost">Se connecter</Button>
+          <Button className="rounded-full">S'inscrire</Button>
+        </div>
       </div>
     </nav>
   );
