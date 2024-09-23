@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
@@ -14,7 +15,7 @@ import { Button } from "@/components/ui/button";
 
 const LandingNav: FC = (): JSX.Element => {
   return (
-    <nav>
+    <nav className="w-full overflow-hidden">
       <div className="container mx-auto py-5 px-10 flex items-center justify-between">
         {/* Logo */}
         <img src="/logo.svg" alt="logo" className="object-cover" />
@@ -25,13 +26,18 @@ const LandingNav: FC = (): JSX.Element => {
             {navList.map((item, index) => (
               <NavigationMenuItem key={index}>
                 <Link href={item.url as string} legacyBehavior passHref>
-                  <NavigationMenuLink>{item.label}</NavigationMenuLink>
+                  <NavigationMenuLink className="text-secondary font-medium">
+                    {item.label}
+                  </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        <Button>Se connecter</Button>
+        <div className="button flex gap-4">
+          <Button variant="ghost">Se connecter</Button>
+          <Button className="rounded-full">S'inscrire</Button>
+        </div>
       </div>
     </nav>
   );
