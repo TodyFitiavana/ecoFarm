@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 
 const LandingNav: FC = (): JSX.Element => {
   return (
-    <nav>
+    <nav className="w-full overflow-hidden">
       <div className="container mx-auto py-5 px-10 flex items-center justify-between">
         {/* Logo */}
         <img src="/logo.svg" alt="logo" className="object-cover" />

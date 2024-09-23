@@ -9,15 +9,15 @@ import HeroStatItem from "./components/HeroStatItem";
 const Hero: React.FC = (): JSX.Element => {
   return (
     <section className="home__hero w-full">
-      <div className="container mx-auto px-20 flex gap-20 my-[21vh]">
-        <div className="hero-left w-[50%] flex flex-col gap-5">
-          <h2 className="font-cal-sans text-[3rem] text-secondary">
+      <div className="container mx-auto px-20 flex gap-20 my-[19vh]">
+        <div className="hero-left w-[47%] flex flex-col gap-5">
+          <h2 className="font-cal-sans text-[2.65rem] text-secondary">
             <span className="text-[#364423] bg-slate-300 p-2 rounded-full">
               L'Agriculture
             </span>{" "}
             intelligente , à portée de main .
           </h2>
-          <p className="w-[90%] text-secondary-foreground">
+          <p className="w-[95%] text-secondary-foreground">
             Grâce à EcoFarm, achetez directement des produits agricoles ou
             bénéficiez d'un accompagnement par l'IA pour optimiser vos
             productions et obtenir de meilleurs résultats.
@@ -38,8 +38,12 @@ const Hero: React.FC = (): JSX.Element => {
             <HeroStatItem nombre="+150" nom="Produit Agricoles" />
           </footer>
         </div>
-        <div className="hero-right w-[35%]">
-          <img src="/Rectangle.svg" alt="logo" className="object-cover" />
+        <div className="hero-right w-[53%] relative -top-16">
+          <img
+            src="/hero-shape.svg"
+            alt="logo"
+            className="object-contain h-full w-full"
+          />
         </div>
       </div>
     </section>
