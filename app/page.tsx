@@ -1,11 +1,11 @@
-import React, { FC } from "react";
+'use client'
 
-const Landing: FC = (): JSX.Element => {
+import React from "react";
+
+
+const page:React.FC = () : JSX.Element => {
   return (
-    <section className="landing">
-      <></>
-    </section>
+    <div>Helllo</div>
   );
 };
-
-export default Landing;
+export default page;
