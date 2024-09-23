@@ -13,10 +13,9 @@ const Hero: React.FC = (): JSX.Element => {
         <div className="hero-left w-[50%] flex flex-col gap-5">
           <h2 className="font-cal-sans text-[3rem] text-secondary">
             <span className="text-[#364423] bg-slate-300 p-2 rounded-full">
-              L'Agriculteur
+              L'Agriculture
             </span>{" "}
-            intelligente , à 
-            portée de main .
+            intelligente , à portée de main .
           </h2>
           <p className="w-[90%] text-secondary-foreground">
             Grâce à EcoFarm, achetez directement des produits agricoles ou

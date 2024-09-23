@@ -34,7 +34,7 @@ const LoginForm: React.FC = (): JSX.Element => {
         {/* Logo */}
         <img src="/logo.svg" alt="logo" className="object-cover w-[150px]" />
         <h4 className="text-secondary text-3xl font-cal-sans">
-          Content de te revoir !
+          Content de vous revoir !
         </h4>
         <p className="text-secondary-foreground">
           Se connecter à votre compte en entrant les informations du formulaire.
@@ -43,7 +43,7 @@ const LoginForm: React.FC = (): JSX.Element => {
       {/* Form */}
       <FormProvider {...form}>
         <form
-          className="w-full flex flex-col gap-3 items-end"
+          className="w-full flex flex-col gap-4 items-end"
           onSubmit={form.handleSubmit(handleSubmit)}
         >
           <FormField
