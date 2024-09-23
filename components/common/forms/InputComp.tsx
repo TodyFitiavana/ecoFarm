@@ -41,6 +41,7 @@ const Default = forwardRef<HTMLInputElement, VariantType>(
     },
     ref
   ): JSX.Element => {
+    console.log(type);
     return (
       <FormItem className="w-full">
         {label && (
@@ -52,7 +53,7 @@ const Default = forwardRef<HTMLInputElement, VariantType>(
             type={type}
             placeholder={placeholder}
             {...props}
-            className={cn(className, "h-[45px] rounded-lg")}
+            className={cn(className, "h-[43px] rounded-lg")}
             suffix={suffixIcon}
             clear={clear}
           />

@@ -21,6 +21,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           {...props}
           type={clear ? "search" : type}
           ref={ref}
+          autoComplete="off"
           className="bg-transparent w-full p-2 placeholder:text-muted-foreground focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50"
         />
         {suffix}
