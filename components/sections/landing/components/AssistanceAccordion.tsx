@@ -1,11 +1,11 @@
-import React from 'react';
+import React from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { AssistanceAccordionType } from '@/helpers/types/types';
+import { AssistanceAccordionType } from "@/helpers/types/types";
 
 const AssistanceAccordion: React.FC<AssistanceAccordionType> = ({
   index,

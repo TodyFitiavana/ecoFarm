@@ -12,6 +12,6 @@ type LandingCardTypes = {
 type AssistanceAccordionType = {
   index: string;
   accordionTrigger: string;
-  accordionContent ? :string;
+  accordionContent?: string;
 };
-export type { NavListType, LandingCardTypes,AssistanceAccordionType };
+export type { NavListType, LandingCardTypes, AssistanceAccordionType };

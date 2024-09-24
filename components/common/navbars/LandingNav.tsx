@@ -16,9 +16,9 @@ import { cn } from "@/lib/utils";
 
 const LandingNav: FC = (): JSX.Element => {
   const [activeLink, setActiveLink] = useState<string | null>("Accueil");
-  const handleClick = (link:string) =>{
+  const handleClick = (link: string) => {
     setActiveLink(link);
-  }
+  };
   return (
     <nav className="w-full overflow-hidden">
       <div className="container mx-auto py-5 px-10 flex items-center justify-between">
@@ -36,9 +36,9 @@ const LandingNav: FC = (): JSX.Element => {
                 <Link href={item.url as string} legacyBehavior passHref>
                   <NavigationMenuLink
                     className={cn(
-                      "hover:text-gray-300",
+                      "hover:text-primary hover:border-b hover:border-primary",
                       activeLink === `${item.label}` &&
-                        "border-b-2 border-black"
+                        "border-b border-primary text-primary"
                     )}
                   >
                     {item.label}

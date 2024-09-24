@@ -5,7 +5,7 @@ import { landingCardData } from "@/helpers/constant";
 
 const Features: React.FC = (): JSX.Element => {
   return (
-    <section className="w-full mt-[80px]">
+    <section className="w-full mt-[4rem]">
       <div className="mx-auto container px-20 flex flex-col gap-10 mb-20">
         <SectionHeader
           title="Fonctionnalités"
