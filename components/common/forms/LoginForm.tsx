@@ -8,6 +8,7 @@ import InputComp from "./InputComp";
 import { Button } from "@/components/ui/button";
 import useShow from "@/core/hooks/useShow";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import authServices from "@/services/authServices";
 
 export const facialIcon = () => {
   return <img src="/icons/facial-recognition.svg" alt="facial-icon" />;
@@ -24,8 +25,8 @@ const LoginForm: React.FC = (): JSX.Element => {
     },
   });
 
-  const handleSubmit = (data: LoginformSchema) => {
-    console.table(data);
+  const handleSubmit = async (data: LoginformSchema) => {
+    await authServices.login(data);
   };
 
   return (
