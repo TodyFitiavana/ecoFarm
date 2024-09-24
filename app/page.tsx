@@ -1,6 +1,7 @@
 "use client";
 
 import LandingNav from "@/components/common/navbars/LandingNav";
+import About from "@/components/sections/landing/About";
 import Hero from "@/components/sections/landing/Hero";
 import React from "react";
 const Landing: React.FC = (): JSX.Element => {
@@ -10,7 +11,9 @@ const Landing: React.FC = (): JSX.Element => {
         <LandingNav />
         <Hero />
       </section>
-      <section></section>
+      <section>
+        <About/>
+      </section>
     </>
   );
 };
