@@ -1,6 +1,6 @@
 "use client";
 
-import LoginForm from "@/components/common/forms/LoginForm";
+import LoginForm from "@/components/shared/forms/LoginForm";
 import React from "react";
 
 const Login: React.FC = (): JSX.Element => {

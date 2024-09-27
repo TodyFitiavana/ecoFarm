@@ -1,6 +1,6 @@
 import React from "react";
 import SectionHeader from "./components/SectionHeader";
-import LandingCard from "@/components/common/cards/LandingCard";
+import LandingCard from "@/components/shared/cards/LandingCard";
 import { landingCardData } from "@/helpers/constant";
 
 const Features: React.FC = (): JSX.Element => {
