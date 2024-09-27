@@ -5,7 +5,6 @@ import "cal-sans";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  display: "swap",
   weight: ["500"],
 });
 
@@ -20,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={montserrat.className}>
-      <body>
+    <html lang="en">
+      <body className={montserrat.className}>
         <main>{children}</main>
       </body>
     </html>
