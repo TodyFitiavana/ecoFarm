@@ -13,7 +13,7 @@ const Hero: React.FC = (): JSX.Element => {
         <div className="hero-left w-[47%] flex flex-col gap-6">
           <h2 className="font-cal-sans text-[2.65rem] text-secondary">
             <span className="text-[#364423] bg-slate-300 p-2 rounded-full">
-              L'Agriculture
+              L'agriculture
             </span>{" "}
             intelligente , à portée de main .
           </h2>
