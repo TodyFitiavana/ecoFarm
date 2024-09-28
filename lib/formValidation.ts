@@ -14,7 +14,7 @@ const signupformSchema = z.object({
     .string()
     .min(8, { message: "Le mot de passe doit être au moins 8 caractères" })
     .default(""),
-  name: z
+  userName: z
     .string({
       message: "Le nom est obligatoire",
     })

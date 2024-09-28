@@ -12,7 +12,7 @@ const SendemailForm: React.FC = (): JSX.Element => {
     resolver: zodResolver(signupformSchema),
     defaultValues: {
       email: "",
-      name: "",
+      userName: "",
       mobileNumber: 0,
       password: "",
     },

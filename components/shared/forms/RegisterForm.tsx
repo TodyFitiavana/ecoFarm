@@ -11,7 +11,7 @@ const RegisterForm: React.FC = (): JSX.Element => {
   const form = useForm<SignupformSchema>({
     resolver: zodResolver(signupformSchema),
     defaultValues: {
-      name: "",
+      userName: "",
       mobileNumber: 0,
       password: "",
     },
@@ -42,7 +42,7 @@ const RegisterForm: React.FC = (): JSX.Element => {
         >
           <FormField
             control={form.control}
-            name="name"
+            name="userName"
             render={({ field }) => {
               return (
                 <InputComp.Default
