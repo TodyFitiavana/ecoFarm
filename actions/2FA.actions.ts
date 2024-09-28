@@ -2,7 +2,7 @@
 "use server";
 
 import { sendEmail } from "@/lib/mailer";
-import { createSession } from "@/lib/sessions";
+import { createSession, deleteSession, getSession } from "@/lib/sessions";
 import { authenticator } from "otplib";
 import QRCode from "qrcode";
 
@@ -44,7 +44,7 @@ const generateQR2FA = async (email: string): Promise<string | null> => {
     </html>
     `;
 
-    await createSession(email, "register-session", url); // création de la session
+    await createSession(email, "register-session", url, secret); // création de la session
     await sendEmail(
       email,
       "Code QR pour création de compte",
@@ -58,4 +58,25 @@ const generateQR2FA = async (email: string): Promise<string | null> => {
   }
 };
 
-export { generateQR2FA };
+const verifyOTP = async (otp: string): Promise<boolean> => {
+  const session = await getSession("register-session");
+
+  if (!session) {
+    throw new Error("Session non trouvée");
+  }
+  try {
+    const { secret } = session;
+    const isValid = authenticator.verify({ token: otp, secret });
+
+    if (isValid) {
+      await deleteSession("register-session");
+      return isValid;
+    }
+
+    return false;
+  } catch (err) {
+    throw new Error("Erreur lors de la vérification du code OTP: ", err);
+  }
+};
+
+export { generateQR2FA, verifyOTP };

@@ -29,11 +29,12 @@ const decrypt = async (session: string | undefined = "") => {
 const createSession = async (
   email: string,
   sessionName: string,
-  url: string
+  url: string,
+  secret: string
 ) => {
   try {
     const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
-    const session = await encrypt({ email, expiresAt, qr: url });
+    const session = await encrypt({ email, expiresAt, qr: url, secret });
 
     cookies().set(sessionName, session, {
       httpOnly: true,
@@ -63,4 +64,8 @@ const getSession = async (
   }
 };
 
-export { encrypt, decrypt, createSession, getSession };
+const deleteSession = async (sessionName: string) => {
+  cookies().delete(sessionName);
+};
+
+export { encrypt, decrypt, createSession, getSession, deleteSession };
