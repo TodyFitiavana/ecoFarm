@@ -52,7 +52,9 @@ const LandingNav: FC = (): JSX.Element => {
           <Link href="/login">
             <Button variant="ghost">Se connecter</Button>
           </Link>
-          <Button className="rounded-full">S'inscrire</Button>
+          <Link href="/signup/send-email">
+            <Button className="rounded-full">S'inscrire</Button>
+          </Link>
         </div>
       </div>
     </nav>

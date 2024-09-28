@@ -6,7 +6,7 @@ class authServices {
     try {
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_DJANGO_URI}/users/login/`,
-        data,
+        { ...data },
 
         {
           headers: {

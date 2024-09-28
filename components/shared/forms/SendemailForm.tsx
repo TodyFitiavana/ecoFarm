@@ -1,32 +1,26 @@
 "use client";
 
 import { FormField } from "@/components/ui/form";
-import { loginformSchema, LoginformSchema } from "@/lib/formValidation";
+import { signupformSchema, SignupformSchema } from "@/lib/formValidation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 import InputComp from "./InputComp";
 import { Button } from "@/components/ui/button";
-import useShow from "@/core/hooks/useShow";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import authServices from "@/services/authServices";
-
-export const facialIcon = () => {
-  return <img src="/icons/facial-recognition.svg" alt="facial-icon" />;
-};
 
 const SendemailForm: React.FC = (): JSX.Element => {
-  const { changeShowState, show } = useShow();
-
-  const form = useForm<LoginformSchema>({
-    resolver: zodResolver(loginformSchema),
+  const form = useForm<SignupformSchema>({
+    resolver: zodResolver(signupformSchema),
     defaultValues: {
       email: "",
+      name: "",
+      mobileNumber: 0,
       password: "",
     },
   });
 
-  const handleSubmit = async (data: LoginformSchema) => {
-    await authServices.login(data);
+  const handleSubmit = async (data: SignupformSchema) => {
+    // await authServices.login(data);
+    console.log(data);
   };
 
   return (
@@ -34,10 +28,12 @@ const SendemailForm: React.FC = (): JSX.Element => {
       <header className="flex flex-col gap-3 items-center">
         {/* Logo */}
         <img src="/logo.svg" alt="logo" className="object-cover w-[150px]" />
-        <h4 className="text-secondary text-3xl font-cal-sans">
+        <h4 className="text-secondary text-[1.7em] font-cal-sans">
           Créer votre compte
         </h4>
-        <p className="text-secondary-foreground text-center">Entrez votre adresse email pour débuter sur EcoFarm</p>
+        <p className="text-secondary-foreground text-center">
+          Entrez votre adresse email pour débuter sur EcoFarm
+        </p>
       </header>
       {/* Form */}
       <FormProvider {...form}>
@@ -70,7 +66,7 @@ const SendemailForm: React.FC = (): JSX.Element => {
       {/* signup */}
       <p className="text-secondary text-center">
         Vous avez déja un compte?{" "}
-        <span className="text-blue-500">Se connecter</span>
+        <span className="text-blue-500">Confirmer</span>
       </p>
     </div>
   );
