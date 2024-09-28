@@ -24,13 +24,28 @@ const signupformSchema = z.object({
     .default(0),
 });
 
+const sendemailFormSchema = z.object({
+  email: z.string().email({ message: "Email invalide" }),
+});
+
 const otpformSchema = z.object({
   otp: z.string().min(6, { message: "Veuillez entre le code" }).default(""),
 });
 
 type LoginformSchema = z.infer<typeof loginformSchema>;
+type SendemailFormSchema = z.infer<typeof sendemailFormSchema>;
 type SignupformSchema = z.infer<typeof signupformSchema>;
 type OtpformSchema = z.infer<typeof otpformSchema>;
 
-export { loginformSchema, signupformSchema, otpformSchema };
-export type { LoginformSchema, SignupformSchema, OtpformSchema };
+export {
+  loginformSchema,
+  signupformSchema,
+  sendemailFormSchema,
+  otpformSchema,
+};
+export type {
+  LoginformSchema,
+  SignupformSchema,
+  OtpformSchema,
+  SendemailFormSchema,
+};

@@ -1,26 +1,27 @@
 "use client";
 
 import { FormField } from "@/components/ui/form";
-import { signupformSchema, SignupformSchema } from "@/lib/formValidation";
+import { SendemailFormSchema, sendemailFormSchema } from "@/lib/formValidation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 import InputComp from "./InputComp";
 import { Button } from "@/components/ui/button";
+import { generateQR2FA } from "@/actions/2FA.actions";
+import { useRouter } from "next/navigation";
 
 const SendemailForm: React.FC = (): JSX.Element => {
-  const form = useForm<SignupformSchema>({
-    resolver: zodResolver(signupformSchema),
+  const router = useRouter();
+  const form = useForm<SendemailFormSchema>({
+    resolver: zodResolver(sendemailFormSchema),
     defaultValues: {
       email: "",
-      userName: "",
-      mobileNumber: 0,
-      password: "",
     },
   });
 
-  const handleSubmit = async (data: SignupformSchema) => {
-    // await authServices.login(data);
-    console.log(data);
+  const handleSubmit = async (data: SendemailFormSchema) => {
+    if (await generateQR2FA(data.email)) {
+      router.push("/signup/validate-code");
+    }
   };
 
   return (
@@ -47,7 +48,7 @@ const SendemailForm: React.FC = (): JSX.Element => {
             render={({ field }) => {
               return (
                 <InputComp.Default
-                  clear={false}
+                  clear={true}
                   type="email"
                   placeholder="Votre email"
                   field={field}

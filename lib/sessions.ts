@@ -26,10 +26,14 @@ const decrypt = async (session: string | undefined = "") => {
   return payload;
 };
 
-const createSession = async (email: string, sessionName: string) => {
+const createSession = async (
+  email: string,
+  sessionName: string,
+  url: string
+) => {
   try {
     const expiresAt = new Date(Date.now() + 7 * 24 * 60 * 60 * 1000);
-    const session = await encrypt({ email, expiresAt });
+    const session = await encrypt({ email, expiresAt, qr: url });
 
     cookies().set(sessionName, session, {
       httpOnly: true,
