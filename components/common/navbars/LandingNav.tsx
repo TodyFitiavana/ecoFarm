@@ -103,13 +103,11 @@ const LandingNav: FC = (): JSX.Element => {
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        <div className="button flex flex-col gap-4 justify-center items-center">
-          <div>
+        <div className="button flex gap-4">
+          <Link href="/login">
             <Button variant="ghost">Se connecter</Button>
-          </div>
-          <div>
-            <Button className="rounded-full">S'inscrire</Button>
-          </div>
+          </Link>
+          <Button className="rounded-full">S'inscrire</Button>
         </div>
       </div>
     </nav>
