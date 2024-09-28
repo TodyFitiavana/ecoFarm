@@ -29,7 +29,8 @@ const ValidateCodeForm: React.FC = (): JSX.Element => {
           Valider le code à 6 chiffres
         </h4>
         <p className="text-secondary-foreground text-center">
-          Nous vous avons un code à 6 chiffres
+          Entrez le code à 6 chiffres généré par Google Authenticator après
+          avoir scanné le QR code envoyé par email.
         </p>
       </header>
       {/* Form */}

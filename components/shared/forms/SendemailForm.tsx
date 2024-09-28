@@ -8,8 +8,11 @@ import InputComp from "./InputComp";
 import { Button } from "@/components/ui/button";
 import { generateQR2FA } from "@/actions/2FA.actions";
 import { useRouter } from "next/navigation";
+import { useToast } from "@/core/hooks/useToast";
+import { useState } from "react";
 
 const SendemailForm: React.FC = (): JSX.Element => {
+  const { toast } = useToast();
   const router = useRouter();
   const form = useForm<SendemailFormSchema>({
     resolver: zodResolver(sendemailFormSchema),
@@ -21,6 +24,11 @@ const SendemailForm: React.FC = (): JSX.Element => {
   const handleSubmit = async (data: SendemailFormSchema) => {
     if (await generateQR2FA(data.email)) {
       router.push("/signup/validate-code");
+      toast({
+        title: "Email envoyé",
+        description:
+          "Nous vous avons envoyé un code QR par email, veuillez vérifier votre boîte email",
+      });
     }
   };
 
@@ -59,7 +67,7 @@ const SendemailForm: React.FC = (): JSX.Element => {
             }}
           />
           <Button className="w-full mt-5" type="submit">
-            Se connecter
+            Confirmer
           </Button>
         </form>
       </FormProvider>
@@ -67,7 +75,7 @@ const SendemailForm: React.FC = (): JSX.Element => {
       {/* signup */}
       <p className="text-secondary text-center">
         Vous avez déja un compte?{" "}
-        <span className="text-blue-500">Confirmer</span>
+        <span className="text-blue-500">Se connecter</span>
       </p>
     </div>
   );
