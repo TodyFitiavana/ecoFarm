@@ -1,11 +1,21 @@
 "use client";
 
-import { FormField } from "@/components/ui/form";
+import {
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormMessage,
+} from "@/components/ui/form";
 import { OtpformSchema, otpformSchema } from "@/lib/formValidation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
-import InputComp from "./InputComp";
 import { Button } from "@/components/ui/button";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
 
 const ValidateCodeForm: React.FC = (): JSX.Element => {
   const form = useForm<OtpformSchema>({
@@ -21,7 +31,7 @@ const ValidateCodeForm: React.FC = (): JSX.Element => {
   };
 
   return (
-    <div className="flex flex-col gap-8 w-full">
+    <div className="flex flex-col gap-8 w-full max-w-md mx-auto p-4">
       <header className="flex flex-col gap-3 items-center">
         {/* Logo */}
         <img src="/logo.svg" alt="logo" className="object-cover w-[150px]" />
@@ -36,25 +46,33 @@ const ValidateCodeForm: React.FC = (): JSX.Element => {
       {/* Form */}
       <FormProvider {...form}>
         <form
-          className="w-full flex flex-col gap-4 items-end"
+          className="w-full flex flex-col gap-4 items-center"
           onSubmit={form.handleSubmit(handleSubmit)}
         >
-          {/* <FormField
+          <FormField
             control={form.control}
-            name="email"
+            name="otp"
             render={({ field }) => {
               return (
-                <InputComp.Default
-                  clear={false}
-                  type="email"
-                  placeholder="Votre email"
-                  field={field}
-                  className="w-full"
-                  label="Adresse Email"
-                />
+                <FormItem>
+                  <FormControl>
+                    <InputOTP maxLength={6} {...field}>
+                      <InputOTPGroup className="flex justify-center">
+                        {Array.from({ length: 6 }).map((_, index) => (
+                          <InputOTPSlot
+                            key={index}
+                            index={index}
+                            className="w-12 h-12 text-center"
+                          />
+                        ))}
+                      </InputOTPGroup>
+                    </InputOTP>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
               );
             }}
-          /> */}
+          />
           <Button className="w-full mt-5" type="submit">
             Confirmer
           </Button>

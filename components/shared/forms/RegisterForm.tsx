@@ -37,7 +37,7 @@ const RegisterForm: React.FC = (): JSX.Element => {
       {/* Form */}
       <FormProvider {...form}>
         <form
-          className="w-full flex flex-col gap-4 items-end"
+          className="w-full flex flex-col gap-4 items-center"
           onSubmit={form.handleSubmit(handleSubmit)}
         >
           <FormField
