@@ -8,10 +8,10 @@ import HeroStatItem from "./components/HeroStatItem";
 
 const Hero: React.FC = (): JSX.Element => {
   return (
-    <section className="home__hero">
-      <div className="container mx-auto px-20 flex gap-20 mt-[19vh] items-start">
-        <div className="hero-left w-[47%] flex flex-col gap-6">
-          <h2 className="font-cal-sans text-[2.65rem] text-secondary">
+    <section className="home__hero w-full overflow-hidden">
+      <div className="container mx-auto px-10 lg:px-20 flex lg:gap-20 mt-[19vh] items-start flex-col md:flex-row">
+        <div className="hero-left w-full md:w-[47%] flex flex-col gap-6">
+          <h2 className="font-cal-sans text-[2rem] lg:text-[2.65rem] md:text-[2.65rem] text-secondary">
             <span className="text-[#364423] bg-slate-300 p-2 rounded-full">
               L'agriculture
             </span>{" "}
@@ -38,7 +38,7 @@ const Hero: React.FC = (): JSX.Element => {
             <HeroStatItem nombre="+150" nom="Produit Agricoles" />
           </footer>
         </div>
-        <div className="hero-right w-[53%] relative -top-[14vh]">
+        <div className="hero-right lg:w-[53%] relative w-full">
           <img
             src="/hero-shape.svg"
             alt="logo"

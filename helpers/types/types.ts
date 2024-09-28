@@ -8,6 +8,7 @@ type LandingCardTypes = {
   title: string;
   description: string;
   bgColor?: string;
+  index?: number
 };
 type AssistanceAccordionType = {
   index: string;

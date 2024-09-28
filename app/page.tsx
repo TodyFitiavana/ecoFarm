@@ -1,6 +1,6 @@
 "use client";
 
-import LandingNav from "@/components/common/navbars/LandingNav";
+import LandingNav from "@/components/common/navbars/landing-nav/LandingNav";
 import About from "@/components/sections/landing/About";
 import Assistance from "@/components/sections/landing/Assistance";
 import Features from "@/components/sections/landing/Features";

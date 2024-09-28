@@ -13,11 +13,14 @@ const LandingCard: React.FC<LandingCardTypes> = ({
   lotlie,
   title,
   description,
+  index,
   bgColor,
 }): JSX.Element => {
   return (
     <Card
-      className="rounded-[15px]"
+      className={`rounded-[15px] ${
+        index === 2 ? "md:col-span-2" : "md:col-span-1"
+      }`}
       style={{ backgroundColor: `${bgColor as string}` }}
     >
       <DotLottiePlayer src={`${lotlie}`} loop autoplay className="w-[150px]" />

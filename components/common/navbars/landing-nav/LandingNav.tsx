@@ -13,14 +13,13 @@ import Link from "next/link";
 import { navList } from "@/helpers/constant";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/lib/redux/Store";
+import { useDispatch } from "react-redux";
 import { toogleNav } from "@/lib/redux/slices/navSlices";
+import LandingNavResponsive from "./LandingNavResponsive";
 
 const LandingNav: FC = (): JSX.Element => {
   const [activeLink, setActiveLink] = useState<string | null>("Accueil");
   const dispatch = useDispatch();
-  const navState = useSelector((state: RootState) => state.nav.navState);
   const handleClick = (link: string) => {
     setActiveLink(link);
   };
@@ -39,7 +38,7 @@ const LandingNav: FC = (): JSX.Element => {
           <img
             src="icons/menu.svg"
             alt="menu"
-            className="object-cover w-[40px]"
+            className="object-cover w-[35px]"
           />
         </div>
 
@@ -75,40 +74,8 @@ const LandingNav: FC = (): JSX.Element => {
       </div>
 
       {/* Navbar Responsive */}
-      <div
-        className={`landing-nav-respons container mx-auto py-5 px-10 justify-center flex flex-col fixed w-full bg-red-300 z-50 items-center ${
-          navState ? "flex" : "hidden"
-        }`}
-      >
-        {" "}
-        <NavigationMenu>
-          <NavigationMenuList className="flex flex-col gap-7">
-            {navList.map((item, index) => (
-              <NavigationMenuItem
-                key={index}
-                onClick={() => handleClick(`${item.label}`)}
-              >
-                <Link href={item.url as string} legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={cn(
-                      "hover:text-primary hover:border-b hover:border-primary",
-                      activeLink === `${item.label}` &&
-                        "border-b border-primary text-primary"
-                    )}
-                  >
-                    {item.label}
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            ))}
-          </NavigationMenuList>
-        </NavigationMenu>
-        <div className="button flex gap-4">
-          <Link href="/login">
-            <Button variant="ghost">Se connecter</Button>
-          </Link>
-          <Button className="rounded-full">S'inscrire</Button>
-        </div>
+      <div className="lg:hidden flex">
+        <LandingNavResponsive />
       </div>
     </nav>
   );
