@@ -16,8 +16,13 @@ import {
   InputOTPGroup,
   InputOTPSlot,
 } from "@/components/ui/input-otp";
+import { verifyOTP } from "@/actions/2FA.actions";
+import { useToast } from "@/core/hooks/useToast";
+import { useRouter } from "next/navigation";
 
 const ValidateCodeForm: React.FC = (): JSX.Element => {
+  const router = useRouter();
+  const { toast } = useToast();
   const form = useForm<OtpformSchema>({
     resolver: zodResolver(otpformSchema),
     defaultValues: {
@@ -26,8 +31,20 @@ const ValidateCodeForm: React.FC = (): JSX.Element => {
   });
 
   const handleSubmit = async (data: OtpformSchema) => {
-    // await authServices.login(data);
-    console.log(data);
+    const response = await verifyOTP(data.otp);
+
+    if (response.status === 200) {
+      router.push("/signup/validate-code");
+      toast({
+        title: "Code validé avec succés!",
+        description: "Le code à 6 chiffres a été validé avec succés",
+      });
+    } else {
+      toast({
+        title: "Un erreur s'est produit",
+        variant: "destructive",
+      });
+    }
   };
 
   return (

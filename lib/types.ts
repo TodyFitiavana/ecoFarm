@@ -1,10 +1,9 @@
 import { JWTPayload } from "jose";
 
-interface SessionPayload extends JWTPayload {
+interface SessionPayload {
   email: string;
-  qr?: string;
   expiresAt: Date;
-  secret: string
+  secret: string;
 }
 
 export type { SessionPayload };

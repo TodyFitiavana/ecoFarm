@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { generateQR2FA } from "@/actions/2FA.actions";
 import { useRouter } from "next/navigation";
 import { useToast } from "@/core/hooks/useToast";
-import { useState } from "react";
 
 const SendemailForm: React.FC = (): JSX.Element => {
   const { toast } = useToast();
@@ -22,12 +21,19 @@ const SendemailForm: React.FC = (): JSX.Element => {
   });
 
   const handleSubmit = async (data: SendemailFormSchema) => {
-    if (await generateQR2FA(data.email)) {
+    const response = await generateQR2FA(data.email);
+
+    if (response.status === 200) {
       router.push("/signup/validate-code");
       toast({
-        title: "Email envoyé",
+        title: "Email envoyé!",
         description:
           "Nous vous avons envoyé un code QR par email, veuillez vérifier votre boîte email",
+      });
+    } else {
+      toast({
+        title: "Un erreur s'est produit!",
+        variant: "destructive",
       });
     }
   };

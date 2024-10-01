@@ -1,19 +1,18 @@
-// actions/2FA.actions.ts
 "use server";
 
 import { sendEmail } from "@/lib/mailer";
-import { createSession, deleteSession, getSession } from "@/lib/sessions";
+import { getSession } from "@/lib/sessions";
 import { authenticator } from "otplib";
 import QRCode from "qrcode";
+import { Response } from "@/helpers/types/status";
 
-const generateQR2FA = async (email: string): Promise<string | null> => {
+const generateQR2FA = async <T>(email: string): Promise<Response<T>> => {
   const secret = authenticator.generateSecret();
+  const session = await getSession();
 
   try {
     const otpauthURL = authenticator.keyuri(email, `EcoFarm: ${email}`, secret);
     const url = await QRCode.toDataURL(otpauthURL);
-
-    console.log("URL du code QR:", url);
 
     const htmlContent = `
     <!DOCTYPE html>
@@ -22,7 +21,7 @@ const generateQR2FA = async (email: string): Promise<string | null> => {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Lôkaly</title>
+        <title>EcoFarm</title>
         <style>
             @import url('https://fonts.cdnfonts.com/css/general-sans');
         </style>
@@ -44,38 +43,52 @@ const generateQR2FA = async (email: string): Promise<string | null> => {
     </html>
     `;
 
-    await createSession(email, "register-session", url, secret); // création de la session
+    session.email = email;
+    session.secret = secret;
+
     await sendEmail(
       email,
       "Code QR pour création de compte",
       "Scannez le code QR ci dessous en utilisant une application google authentificator et entrez le code  à 6 chiffres dans la plateforme EcoFarm",
       htmlContent
     );
-    return url;
+    await session.save();
+
+    return { status: 200, rest: url as T, message: "Email sent successfully" };
   } catch (err) {
     console.error("Erreur lors de la génération du code QR:", err);
-    throw new Error("Erreur lors de la génération du code QR: " + err.message);
+    return { status: 500, message: `Internal server error: ${err}` };
   }
 };
 
-const verifyOTP = async (otp: string): Promise<boolean> => {
-  const session = await getSession("register-session");
-
-  if (!session) {
-    throw new Error("Session non trouvée");
-  }
+const verifyOTP = async <T>(otp: string): Promise<Response<T>> => {
+  const session = await getSession();
   try {
+    if (!session) {
+      return {
+        status: 400,
+        message: "No session found",
+      };
+    }
+
     const { secret } = session;
     const isValid = authenticator.verify({ token: otp, secret });
 
     if (isValid) {
-      await deleteSession("register-session");
-      return isValid;
+      session.destroy();
+      return {
+        status: 200,
+        message: "Code validated successfully",
+      };
     }
 
-    return false;
+    return {
+      status: 400,
+      message: "An error when occured when verifying code",
+    };
   } catch (err) {
-    throw new Error("Erreur lors de la vérification du code OTP: ", err);
+    console.error("Erreur lors de la vérification du code OTP:", err);
+    return { status: 500, message: `Internal server error: ${err}` };
   }
 };
 
