@@ -74,17 +74,15 @@ const verifyOTP = async <T>(otp: string): Promise<Response<T>> => {
     const { secret } = session;
     const isValid = authenticator.verify({ token: otp, secret });
 
-    if (isValid) {
-      session.destroy();
+    if (!isValid) {
       return {
-        status: 200,
-        message: "Code validated successfully",
+        status: 400,
+        message: "An error when occured when verifying code",
       };
     }
-
     return {
-      status: 400,
-      message: "An error when occured when verifying code",
+      status: 200,
+      message: "Code validated successfully",
     };
   } catch (err) {
     console.error("Erreur lors de la vérification du code OTP:", err);

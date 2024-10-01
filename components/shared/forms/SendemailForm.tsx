@@ -24,7 +24,7 @@ const SendemailForm: React.FC = (): JSX.Element => {
     const response = await generateQR2FA(data.email);
 
     if (response.status === 200) {
-      router.push("/signup/validate-code");
+      router.replace("/signup/validate-code");
       toast({
         title: "Email envoyé!",
         description:
@@ -81,7 +81,12 @@ const SendemailForm: React.FC = (): JSX.Element => {
       {/* signup */}
       <p className="text-secondary text-center">
         Vous avez déja un compte?{" "}
-        <span className="text-blue-500">Se connecter</span>
+        <span
+          className="text-blue-500 cursor-pointer"
+          onClick={() => router.push("/login")}
+        >
+          Se connecter
+        </span>
       </p>
     </div>
   );

@@ -6,20 +6,38 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { FormProvider, useForm } from "react-hook-form";
 import InputComp from "./InputComp";
 import { Button } from "@/components/ui/button";
+import useShow from "@/core/hooks/useShow";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import authServices from "@/services/authServices";
+import { useToast } from "@/core/hooks/useToast";
 
 const RegisterForm: React.FC = (): JSX.Element => {
+  const { toast } = useToast();
+  const { changeShowState, show } = useShow();
   const form = useForm<SignupformSchema>({
     resolver: zodResolver(signupformSchema),
     defaultValues: {
-      userName: "",
-      mobileNumber: 0,
+      nameUser: "",
+      mobileNumber: "",
       password: "",
+      firstnameUser: "",
     },
   });
 
   const handleSubmit = async (data: SignupformSchema) => {
-    // await authServices.login(data);
-    console.log(data);
+    const response = await authServices.signup(data);
+
+    if (response.status === 200) {
+      toast({
+        title: "Compte créé avec succés!",
+        description: `Bienvenue sur EcoFarm ${data.nameUser}`,
+      });
+    } else {
+      toast({
+        title: "Un erreur s'est produit!",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -42,13 +60,13 @@ const RegisterForm: React.FC = (): JSX.Element => {
         >
           <FormField
             control={form.control}
-            name="userName"
+            name="nameUser"
             render={({ field }) => {
               return (
                 <InputComp.Default
                   clear={false}
                   type="text"
-                  placeholder="Votre nom complet"
+                  placeholder="Votre nom"
                   field={field}
                   className="w-full"
                   label="Comment vous appeler?"
@@ -58,7 +76,23 @@ const RegisterForm: React.FC = (): JSX.Element => {
           />
           <FormField
             control={form.control}
-            name="email"
+            name="firstnameUser"
+            render={({ field }) => {
+              return (
+                <InputComp.Default
+                  clear={false}
+                  type="text"
+                  placeholder="Votre prénom"
+                  field={field}
+                  className="w-full"
+                  label="Votre prénom"
+                />
+              );
+            }}
+          />
+          <FormField
+            control={form.control}
+            name="mobileNumber"
             render={({ field }) => {
               return (
                 <InputComp.Default
@@ -79,11 +113,25 @@ const RegisterForm: React.FC = (): JSX.Element => {
               return (
                 <InputComp.Default
                   clear={false}
-                  type="number"
-                  placeholder="Votre nouveau mot de passe"
+                  type={show ? "text" : "password"}
+                  placeholder="Votre mot de passe"
                   field={field}
-                  className="w-full"
-                  label="Créer votre mot de passe"
+                  label="Mot de passe"
+                  suffixIcon={
+                    show ? (
+                      <FaEyeSlash
+                        size={23}
+                        className="text-secondary mr-3 cursor-pointer"
+                        onClick={() => changeShowState(!show)}
+                      />
+                    ) : (
+                      <FaEye
+                        className="text-secondary mr-3 cursor-pointer"
+                        size={23}
+                        onClick={() => changeShowState(!show)}
+                      />
+                    )
+                  }
                 />
               );
             }}

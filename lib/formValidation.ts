@@ -1,7 +1,7 @@
 import * as z from "zod";
 
 const loginformSchema = z.object({
-  email: z.string().email({ message: "Email invalide" }).default(""),
+  email: z.string().email({ message: "Email invalide" }),
   password: z
     .string()
     .min(8, { message: "Le mot de passe doit être au moins 8 caractères" })
@@ -9,16 +9,19 @@ const loginformSchema = z.object({
 });
 
 const signupformSchema = z.object({
-  email: z.string().email({ message: "Email invalide" }),
+  nameUser: z.string().min(1, {
+    message: "Le nom est obligatoire",
+  }),
+  firstnameUser: z.string().min(1, {
+    message: "Le prénom est obligatoire",
+  }),
+  mobileNumber: z
+    .string()
+    .min(10, { message: "Le numéro mobile est obligatoire" })
+    .default(""),
   password: z
     .string()
     .min(8, { message: "Le mot de passe doit être au moins 8 caractères" }),
-  userName: z.string({
-    message: "Le nom est obligatoire",
-  }),
-  mobileNumber: z
-    .number({ message: "Le numéro mobile est obligatoire" })
-    .default(0),
 });
 
 const sendemailFormSchema = z.object({

@@ -32,9 +32,10 @@ const ValidateCodeForm: React.FC = (): JSX.Element => {
 
   const handleSubmit = async (data: OtpformSchema) => {
     const response = await verifyOTP(data.otp);
+    console.log(response);
 
     if (response.status === 200) {
-      router.push("/signup/validate-code");
+      router.replace("/signup/register");
       toast({
         title: "Code validé avec succés!",
         description: "Le code à 6 chiffres a été validé avec succés",

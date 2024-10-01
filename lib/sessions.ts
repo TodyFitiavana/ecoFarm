@@ -18,5 +18,9 @@ export const getSession = async () => {
     cookies(),
     sessionOptions
   );
-  return session;
+  return {
+    email: session.email,
+    expiresAt: session.expiresAt,
+    secret: session.secret,
+  };
 };
