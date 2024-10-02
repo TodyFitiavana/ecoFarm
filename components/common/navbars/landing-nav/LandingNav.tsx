@@ -27,7 +27,6 @@ const LandingNav: FC = (): JSX.Element => {
     <nav className="w-full overflow-hidden fixed lg:relative top-0 z-50">
       <div className="container mx-auto py-5 px-10 flex items-center justify-between bg-white">
         {/* Logo */}
-
         <img src="/logo.svg" alt="logo" className="object-cover" />
 
         {/* Menu icons */}
