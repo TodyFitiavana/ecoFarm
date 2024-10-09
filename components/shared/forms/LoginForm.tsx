@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import useShow from "@/core/hooks/useShow";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import authServices from "@/services/authServices";
+import { useRouter } from "next/navigation";
 
 export const facialIcon = () => {
   return <img src="/icons/facial-recognition.svg" alt="facial-icon" />;
@@ -16,6 +17,7 @@ export const facialIcon = () => {
 
 const LoginForm: React.FC = (): JSX.Element => {
   const { changeShowState, show } = useShow();
+  const router = useRouter();
 
   const form = useForm<LoginformSchema>({
     resolver: zodResolver(loginformSchema),
@@ -122,7 +124,12 @@ const LoginForm: React.FC = (): JSX.Element => {
       {/* signup */}
       <p className="text-secondary text-center">
         Pas encore de compte?{" "}
-        <span className="text-blue-500">Créer un compte</span>
+        <span
+          className="text-blue-500 cursor-pointer"
+          onClick={() => router.push("/signup/send-email")}
+        >
+          Créer un compte
+        </span>
       </p>
     </div>
   );

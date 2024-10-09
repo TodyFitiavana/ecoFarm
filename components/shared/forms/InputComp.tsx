@@ -41,7 +41,6 @@ const Default = forwardRef<HTMLInputElement, VariantType>(
     },
     ref
   ): JSX.Element => {
-    console.log(type);
     return (
       <FormItem className="w-full">
         {label && (

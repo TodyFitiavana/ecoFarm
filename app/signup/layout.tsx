@@ -12,7 +12,7 @@ export default function LoginLayout({
 }>) {
   return (
     <main>
-      <div className="bg-[url('/signup-bg.webp')] w-screen h-screen overflow-hidden bg-center bg-no-repeat bg-cover">
+      <div className="flex justify-center items-center overflow-y-auto bg-[url('/signup-bg.webp')] w-full min-h-screen overflow-x-hidden bg-center bg-no-repeat bg-cover">
         {children}
       </div>
     </main>
