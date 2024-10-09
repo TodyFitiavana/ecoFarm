@@ -25,7 +25,7 @@ const Landing: React.FC = (): JSX.Element => {
         <Assistance />
       </section>
       <section>
-        <Footer/>
+        <Footer />
       </section>
     </>
   );
