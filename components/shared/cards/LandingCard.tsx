@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import clsx from "clsx";
+
 import { LandingCardTypes } from "@/helpers/types/types";
 
 const LandingCard: React.FC<LandingCardTypes> = ({
