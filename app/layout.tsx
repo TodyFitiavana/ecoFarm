@@ -2,11 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
 import "cal-sans";
-<<<<<<< HEAD
 import { Toaster } from "@/components/ui/toaster";
-=======
 import { Providers } from "@/lib/redux/provider";
->>>>>>> develop
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -25,21 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-<<<<<<< HEAD
-    <html lang="en">
-      <body className={montserrat.className}>
-        <main>{children}</main>
-        <Toaster />
-      </body>
-    </html>
-=======
     <Providers>
       <html lang="en" className={montserrat.className}>
         <body>
           <main>{children}</main>
+          <Toaster />
         </body>
       </html>
     </Providers>
->>>>>>> develop
   );
 }

@@ -1,7 +1,7 @@
 "use server";
 
 import { sendEmail } from "@/lib/mailer";
-import { getSession } from "@/lib/sessions";
+import { getSession, saveSession } from "@/lib/sessions";
 import { authenticator } from "otplib";
 import QRCode from "qrcode";
 import { Response } from "@/helpers/types/status";
@@ -43,8 +43,11 @@ const generateQR2FA = async <T>(email: string): Promise<Response<T>> => {
     </html>
     `;
 
-    session.email = email;
-    session.secret = secret;
+    const updatedSession = {
+      email: session.email || email,
+      expiresAt: new Date(Date.now() + 60 * 60 * 24 * 365),
+      secret: secret,
+    };
 
     await sendEmail(
       email,
@@ -52,7 +55,7 @@ const generateQR2FA = async <T>(email: string): Promise<Response<T>> => {
       "Scannez le code QR ci dessous en utilisant une application google authentificator et entrez le code  à 6 chiffres dans la plateforme EcoFarm",
       htmlContent
     );
-    await session.save();
+    await saveSession(updatedSession);
 
     return { status: 200, rest: url as T, message: "Email sent successfully" };
   } catch (err) {

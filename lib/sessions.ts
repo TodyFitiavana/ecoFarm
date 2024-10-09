@@ -24,3 +24,14 @@ export const getSession = async () => {
     secret: session.secret,
   };
 };
+
+export const saveSession = async (session: SessionPayload) => {
+  const ironSession = await getIronSession<SessionPayload>(
+    cookies(),
+    sessionOptions
+  );
+  ironSession.email = session.email;
+  ironSession.expiresAt = session.expiresAt;
+  ironSession.secret = session.secret;
+  await ironSession.save();
+};
