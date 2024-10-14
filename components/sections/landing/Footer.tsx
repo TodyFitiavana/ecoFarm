@@ -1,59 +1,129 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
+"use client";
+
 import FooterNav from "@/components/shared/navbars/FooterNav";
 import { Button } from "@/components/ui/button";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/helpers/framerMotion/framerMotion";
+import { motion } from "framer-motion";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <section className="footer w-full">
-      <div className="bg-[#D9F2B4] help">
-        <div className="container mx-auto flex flex-col items-center w-full gap-5">
-          <div className="flex flex-row px-20 gap-20 h-[336px] justify-center items-center">
-            <div className="w-[70%] flex flex-col gap-5">
-              <h1 className="font-cal-sans text-[40px]">Besoin d’ aide?</h1>
-              <p className="text-[#282828A6]">
-                Nous avons intégré une assistance à l'aide d'une intelligence
-                artificielle via un chatbot pour répondre à vos questions et
-                vous assister.
-              </p>
-              <div>
-                <Button
-                  variant="secondary"
-                  Icon={FaArrowRight}
-                  size="default"
-                  iconPlacement="right"
-                  className="rounded-full text-white"
-                >
-                  Discuter avec l'IA
-                </Button>
-              </div>
-            </div>
-            <div className="w-[30%] justify-center">
-              <img
-                src="/bots.svg"
-                alt="footer-img"
-                className="object-contain"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="footer-start">
-        <div className="container flex mx-auto flex-col px-20 gap-2 h-[336px] justify-center items-center w-full">
-          <h1 className="font-cal-sans text-[37px] text-center leading-tight">
+    <motion.section
+      className="w-full overflow-hidden"
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+    >
+      <motion.div
+        className="bg-[#D9F2B4]"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <motion.div
+          className="container mx-auto flex lg:flex-row flex-col lg:px-20 px-10 lg:gap-20 justify-center items-center py-10 md:text-center lg:text-start"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+        >
+          <motion.div
+            className="lg:w-[70%] w-full flex flex-col gap-5"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
+            <motion.h1
+              className="font-cal-sans lg:text-[40px] text-[2rem]"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+            >
+              Besoin d’ aide?
+            </motion.h1>
+            <motion.p
+              className="text-[#282828A6]"
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+            >
+              Nous avons intégré une assistance à l'aide d'une intelligence
+              artificielle via un chatbot pour répondre à vos questions et vous
+              assister.
+            </motion.p>
+            <motion.div
+              variants={containerVariants}
+              initial="hidden"
+              whileInView="visible"
+            >
+              <Button
+                variant="secondary"
+                Icon={FaArrowRight}
+                size="default"
+                iconPlacement="right"
+                className="rounded-full text-white"
+              >
+                Discuter avec l'IA
+              </Button>
+            </motion.div>
+          </motion.div>
+          <motion.div
+            className="w-[30%] justify-center lg:flex hidden"
+            variants={itemVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
+            <img src="/bots.svg" alt="footer-img" className="object-contain" />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+      <motion.div
+        className="w-full h-[50%]"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <motion.div
+          className="container flex flex-col px-20 lg:h-[336px] h-[50%] justify-center items-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+        >
+          <motion.h1
+            className="font-cal-sans lg:text-[37px] text-[2rem]"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             {" "}
-            Restez serein. <br /> Rejoignez-nous
-          </h1>
-          <div className="button flex gap-4 mt-2">
+            Restez serein.
+          </motion.h1>
+          <motion.h1
+            className="font-cal-sans lg:text-[37px] text-[2rem] mt-[-12px]"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
+            Rejoignez-nous
+          </motion.h1>
+          <motion.div
+            className="button flex gap-4 mt-[20px]"
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             <Button variant="ghost">Se connecter</Button>
             <Button className="rounded-full">S'inscrire</Button>
-          </div>
-        </div>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
       <FooterNav />
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,40 +1,65 @@
 /* eslint-disable react/no-unescaped-entities */
+'use client'
+
 import React from "react";
 import SectionHeader from "./components/SectionHeader";
-import LandingCard from "@/components/shared/cards/LandingCard";
 import { landingCardData } from "@/helpers/constant";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
+import { containerVariants} from "@/helpers/framerMotion/framerMotion";
+import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+
+const LandingCard = dynamic(
+  () => import("@/components/shared/cards/LandingCard"),
+  { ssr: false }
+);
 
 const Features: React.FC = (): JSX.Element => {
   return (
-    <section className="w-full mt-[4rem]">
-      <div className="mx-auto container px-20 flex flex-col gap-10 mb-20">
-        <div className="flex justify-between items-center">
+    <section className="w-full overflow-hidden mt-[4rem]">
+      <motion.div
+        className="mx-auto container lg:px-20 px-10 flex flex-col gap-10 mb-20 "
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+      >
+        <motion.div
+          className="flex justify-between items-center"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+        >
           <SectionHeader
             title="Fonctionnalités"
             subTitle="Que propose"
             varient="question"
             name="ecofarm"
           />
-          <div>
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+          >
             <Button
               variant="secondary"
               Icon={FaArrowRight}
               size="default"
               iconPlacement="right"
-              className="rounded-full text-white"
+              className="rounded-full text-white lg:flex hidden"
             >
-              Discuter avec l'IA
+              En savoir plus
             </Button>
-          </div>
-        </div>
-        <div className="grid grid-cols-3 grid-flow-col gap-7">
+          </motion.div>
+        </motion.div>
+        <motion.div
+          className="grid lg:grid-cols-3 lg:grid-flow-col gap-7 grid-cols-1 md:grid-cols-2 "
+        >
           {landingCardData.map((item, index) => (
             <LandingCard key={index} {...item} />
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
