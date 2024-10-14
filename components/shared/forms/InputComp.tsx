@@ -1,3 +1,5 @@
+"use client";
+
 import {
   FormControl,
   FormItem,
@@ -21,7 +23,7 @@ interface VariantType extends React.InputHTMLAttributes<HTMLInputElement> {
   suffixIcon?: React.ReactNode;
   clear?: boolean;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  field: ControllerRenderProps<any, any>;
+  field?: ControllerRenderProps<any, any>;
 }
 
 const InputComp: InputCompType = ({ children }) => {
