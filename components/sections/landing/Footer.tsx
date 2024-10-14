@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
+"use client";
+
 import FooterNav from "@/components/common/navbars/footer/FooterNav";
 import { Button } from "@/components/ui/button";
 import { containerVariants, itemVariants } from "@/helpers/framerMotion/framerMotion";
@@ -84,13 +86,13 @@ const Footer = () => {
         whileInView="visible"
       >
         <motion.div
-          className="container flex flex-col px-20 lg:h-[336px] h-[50%] justify-center items-center p-10"
+          className="container flex flex-col px-20 lg:h-[336px] h-[50%] justify-center items-center"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
         >
           <motion.h1
-            className="font-cal-sans lg:text-[37px] text-[2rem] "
+            className="font-cal-sans lg:text-[37px] text-[2rem]"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -99,7 +101,7 @@ const Footer = () => {
             Restez serein.
           </motion.h1>
           <motion.h1
-            className="font-cal-sans lg:text-[37px] text-[2rem]"
+            className="font-cal-sans lg:text-[37px] text-[2rem] mt-[-10px]"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -107,7 +109,7 @@ const Footer = () => {
             Rejoignez-nous
           </motion.h1>
           <motion.div
-            className="button flex gap-4"
+            className="button flex gap-4 mt-[20px]"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

@@ -15,16 +15,16 @@ const Landing: React.FC = (): JSX.Element => {
         <Hero />
       </section>
       <section className="landing-About">
-        <About/>
+        <About />
       </section>
       <section className="landing-features">
-        <Features/>
+        <Features />
       </section>
       <section className="landing-assistance">
-        <Assistance/>
+        <Assistance />
       </section>
       <section>
-        <Footer/>
+        <Footer />
       </section>
     </>
   );

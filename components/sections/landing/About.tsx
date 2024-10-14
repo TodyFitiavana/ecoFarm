@@ -1,11 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
+"use client";
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
 import SectionHeader from "./components/SectionHeader";
-import { itemVariants, containerVariants } from "@/helpers/framerMotion/framerMotion";
+import {
+  itemVariants,
+  containerVariants,
+} from "@/helpers/framerMotion/framerMotion";
 
 const About: React.FC = (): JSX.Element => {
   return (

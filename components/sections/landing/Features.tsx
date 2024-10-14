@@ -1,12 +1,19 @@
 /* eslint-disable react/no-unescaped-entities */
+'use client'
+
 import React from "react";
 import SectionHeader from "./components/SectionHeader";
-import LandingCard from "@/components/common/cards/LandingCard";
 import { landingCardData } from "@/helpers/constant";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
 import { containerVariants} from "@/helpers/framerMotion/framerMotion";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";;
+
+const LandingCard = dynamic(
+  () => import("@/components/common/cards/LandingCard"),
+  { ssr: false }
+);
 
 const Features: React.FC = (): JSX.Element => {
   return (
