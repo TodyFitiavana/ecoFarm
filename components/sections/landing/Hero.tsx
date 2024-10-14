@@ -7,7 +7,10 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";
 import HeroStatItem from "./components/HeroStatItem";
-import { containerVariants, itemVariants } from "@/helpers/framerMotion/framerMotion";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/helpers/framerMotion/framerMotion";
 const Hero: React.FC = (): JSX.Element => {
   return (
     <section className="home__hero w-full overflow-hidden h-full">
