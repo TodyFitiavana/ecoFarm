@@ -23,36 +23,48 @@ const FarmerDashboardheader: FC = (): JSX.Element => {
         <img src="/logo.svg" alt="logo" className="object-cover" />
 
         {/* Actions */}
-        {/* Search input*/}
-        <FormProvider {...form}>
-          <form
-          // onSubmit={form.handleSubmit(handleSubmit)}
-          >
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => {
-                return (
-                  <InputComp.Default
-                    clear={false}
-                    placeholder="Recherchez..."
-                    field={field}
-                    className="w-[280px]"
-                    suffixIcon={
-                      <Image
-                        src="/icons/search.svg"
-                        width={20}
-                        height={20}
-                        alt="search icons"
-                        className="mr-3"
-                      />
-                    }
-                  />
-                );
-              }}
+        <div className="farmer-header__actions flex gap-5 items-center h-full">
+          {/* Search input*/}
+          <FormProvider {...form}>
+            <form
+            // onSubmit={form.handleSubmit(handleSubmit)}
+            >
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => {
+                  return (
+                    <InputComp.Default
+                      clear={false}
+                      placeholder="Recherchez..."
+                      field={field}
+                      className="w-[280px]"
+                      suffixIcon={
+                        <Image
+                          src="/icons/search.svg"
+                          width={20}
+                          height={20}
+                          alt="search icons"
+                          className="mr-3"
+                        />
+                      }
+                    />
+                  );
+                }}
+              />
+            </form>
+          </FormProvider>
+
+          {/* bell */}
+          <div className="bell h-full w-[45px] bg-[#F3F9FA] rounded-lg flex items-center justify-center">
+            <Image
+              src="/icons/bell.svg"
+              width={16}
+              height={16}
+              alt="bell icon"
             />
-          </form>
-        </FormProvider>
+          </div>
+        </div>
       </div>
     </header>
   );
