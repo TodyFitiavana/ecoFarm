@@ -20,6 +20,7 @@ interface VariantType extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   suffixIcon?: React.ReactNode;
   clear?: boolean;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   field: ControllerRenderProps<any, any>;
 }
 
@@ -41,7 +42,6 @@ const Default = forwardRef<HTMLInputElement, VariantType>(
     },
     ref
   ): JSX.Element => {
-    console.log(type);
     return (
       <FormItem className="w-full">
         {label && (

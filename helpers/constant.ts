@@ -26,6 +26,7 @@ const landingCardData: LandingCardTypes[] = [
     description:
       "Intégration de l’IA pour conseiller les agriculteurs afin d’avoir une meilleure production.",
     bgColor: "rgba(217, 242, 180, 1)",
+    index:0
   },
   {
     lotlie: "/lottie/features-2.json",
@@ -33,6 +34,7 @@ const landingCardData: LandingCardTypes[] = [
     description:
       "Permettant à l’agriculteur de vendre ses produits agricoles et au consommateur de les acheter.",
     bgColor: "rgba(188, 244, 245, 1)",
+    index:1
   },
   {
     lotlie: "/lottie/features-3.json",
@@ -40,6 +42,7 @@ const landingCardData: LandingCardTypes[] = [
     description:
       "Dans EcoFarm, les données des utilisateurs sont sécurisés par la reconaissance faciale et autres.",
     bgColor: "rgba(255, 183, 195, 1)",
+    index:2
   },
 ];
 
