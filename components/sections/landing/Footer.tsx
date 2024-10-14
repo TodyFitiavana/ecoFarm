@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
-"use client";
-
-import FooterNav from "@/components/shared/navbars/FooterNav";
+import FooterNav from "@/components/shared/navbars/footer/FooterNav";
 import { Button } from "@/components/ui/button";
 import {
   containerVariants,
