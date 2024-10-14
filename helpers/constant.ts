@@ -68,5 +68,24 @@ const assistanceAccordionData: AssistanceAccordionType[] = [
     accordionContent: "",
   },
 ];
-
-export { navList, landingCardData, assistanceAccordionData };
+const farmerNavData: NavListType[] = [
+  {
+    url: "/dashboard.svg",
+    label: "Dashboard",
+  },
+  {
+    url: "/assistance-IA.svg",
+    label: "Assistance IA",
+  },
+  {
+    url: "/produit.svg",
+    label: "Produit",
+    title:"produit"
+  },
+  {
+    url: "/parametre.svg",
+    label: "Compte agriculteur",
+    title:"parametre"
+  },
+];
+export { navList, landingCardData, assistanceAccordionData,farmerNavData };

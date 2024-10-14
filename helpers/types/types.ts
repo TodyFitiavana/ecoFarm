@@ -1,6 +1,8 @@
 type NavListType = {
   label: string;
   url?: string;
+  image?: string;
+  title?:string;
 };
 
 type LandingCardTypes = {
@@ -15,4 +17,5 @@ type AssistanceAccordionType = {
   accordionTrigger: string;
   accordionContent?: string;
 };
+
 export type { NavListType, LandingCardTypes, AssistanceAccordionType };
