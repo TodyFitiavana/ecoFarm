@@ -7,6 +7,7 @@ import { FormField } from "@/components/ui/form";
 import { loginformSchema, LoginformSchema } from "@/lib/formValidation";
 import { FormProvider, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Avatar, AvatarImage } from "@/components/ui/avatar";
 
 const FarmerDashboardheader: FC = (): JSX.Element => {
   const form = useForm<LoginformSchema>({
@@ -23,7 +24,7 @@ const FarmerDashboardheader: FC = (): JSX.Element => {
         <img src="/logo.svg" alt="logo" className="object-cover" />
 
         {/* Actions */}
-        <div className="farmer-header__actions flex gap-5 items-center h-full">
+        <div className="farmer-header__actions flex gap-7 items-center h-full">
           {/* Search input*/}
           <FormProvider {...form}>
             <form
@@ -62,6 +63,24 @@ const FarmerDashboardheader: FC = (): JSX.Element => {
               width={16}
               height={16}
               alt="bell icon"
+            />
+          </div>
+
+          {/* Profile */}
+          <div className="profile flex items-center gap-2">
+            <Avatar>
+              <AvatarImage
+                src="/avatar.png"
+                className="object-cover"
+              ></AvatarImage>
+            </Avatar>
+            <p className="text-secondary text-sm">Loick Emadisson</p>
+            <Image
+              src="/icons/chevron-down.svg"
+              width={20}
+              height={20}
+              alt="search icons"
+              className="mr-3"
             />
           </div>
         </div>
