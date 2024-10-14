@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import SectionHeader from "./components/SectionHeader";
-import LandingCard from "@/components/common/cards/LandingCard";
+import LandingCard from "@/components/shared/cards/LandingCard";
 import { landingCardData } from "@/helpers/constant";
 import { Button } from "@/components/ui/button";
 import { FaArrowRight } from "react-icons/fa";

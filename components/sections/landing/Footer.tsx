@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
-import FooterNav from "@/components/common/navbars/footer/FooterNav";
+import FooterNav from "@/components/shared/navbars/footer/FooterNav";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <FooterNav/>
+      <FooterNav />
     </section>
   );
 };
