@@ -46,7 +46,7 @@ const FarmerDashboardheader: FC = (): JSX.Element => {
                           width={20}
                           height={20}
                           alt="search icons"
-                          className="mr-3"
+                          className="mr-3 cursor-pointer"
                         />
                       }
                     />
