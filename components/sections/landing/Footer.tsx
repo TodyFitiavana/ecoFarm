@@ -1,15 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
-import FooterNav from "@/components/common/navbars/footer/FooterNav";
+import FooterNav from "@/components/shared/navbars/FooterNav";
 import { Button } from "@/components/ui/button";
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <section className="w-full ">
-      <div className="bg-[#D9F2B4]">
-        <div className="container mx-auto flex flex-col gap-5">
+    <section className="footer w-full">
+      <div className="bg-[#D9F2B4] help">
+        <div className="container mx-auto flex flex-col items-center w-full gap-5">
           <div className="flex flex-row px-20 gap-20 h-[336px] justify-center items-center">
             <div className="w-[70%] flex flex-col gap-5">
               <h1 className="font-cal-sans text-[40px]">Besoin d’ aide?</h1>
@@ -40,17 +40,19 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="w-full">
-        <div className="container flex flex-col px-20 gap-2 h-[336px] justify-center items-center">
-          <h1 className="font-cal-sans text-[37px]"> Restez serein.</h1>
-          <h1 className="font-cal-sans text-[37px]">Rejoignez-nous</h1>
-          <div className="button flex gap-4">
+      <div className="footer-start">
+        <div className="container flex mx-auto flex-col px-20 gap-2 h-[336px] justify-center items-center w-full">
+          <h1 className="font-cal-sans text-[37px] text-center leading-tight">
+            {" "}
+            Restez serein. <br /> Rejoignez-nous
+          </h1>
+          <div className="button flex gap-4 mt-2">
             <Button variant="ghost">Se connecter</Button>
             <Button className="rounded-full">S'inscrire</Button>
           </div>
         </div>
       </div>
-      <FooterNav/>
+      <FooterNav />
     </section>
   );
 };
