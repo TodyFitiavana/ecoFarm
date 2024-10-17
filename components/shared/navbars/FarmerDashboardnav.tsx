@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { FC, useState } from "react";
+import { FC } from "react";
 import {
   NavigationMenu,
   NavigationMenuList,
@@ -12,12 +12,10 @@ import {
 import { farmerNavData } from "@/helpers/constant";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils"; // Assuming you have a utility for handling classnames
+import { usePathname } from "next/navigation";
 
 const FarmerDashboardNav: FC = (): JSX.Element => {
-  const [activeLink, setActiveLink] = useState<string | null>("Dashboard");
-  const handleClick = (link: string) =>{
-    setActiveLink(link);
-  }
+  const pathName = usePathname();
   return (
     <div className="farmer-nav h-[calc(100vh-80px)] p-5 fixed mt-3">
       <nav className="w-[300px] h-full rounded-xl bg-white flex flex-col justify-between">
@@ -27,7 +25,6 @@ const FarmerDashboardNav: FC = (): JSX.Element => {
               <NavigationMenuItem
                 key={index}
                 className="mt-5 flex flex-col"
-                onClick={() => handleClick(`${item.label}`)}
               >
                 <NavigationMenuTrigger
                   className={cn(
@@ -40,13 +37,19 @@ const FarmerDashboardNav: FC = (): JSX.Element => {
                   <a
                     href="#"
                     className={cn(
-                      "flex items-center gap-5 text-[#494848] pl-10 cursor-pointer p-4",
-                      activeLink === `${item.label}` &&
-                        "border-primary text-primary bg-[#F3F9FA] p-4 rounded-lg"
+                      "flex items-center gap-5  pl-10 cursor-pointer p-4",
+                        pathName === item.urlPage
+                          ?  "border-primary text-primary bg-[#F3F9FA] p-4 rounded-lg"
+                          :  "text-[#494848]"
+                       
                     )}
                   >
                     <img
-                      src={item.url}
+                      src={
+                        pathName === item.urlPage
+                          ? `${item.urlIconActive}`
+                          : `${item.urlIcon}`
+                      }
                       alt={item.label}
                       className="w-5 h-5 object-cover"
                     />

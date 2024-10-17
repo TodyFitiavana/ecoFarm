@@ -1,8 +1,15 @@
 type NavListType = {
   label: string;
-  url?: string;
+  url: "";
+};
+
+type FarmerNavlistType = {
+  label: string;
+  urlIcon?: string;
+  urlIconActive?: string;
   image?: string;
-  title?:string;
+  title?: string;
+  urlPage?: string;
 };
 
 type LandingCardTypes = {
@@ -10,7 +17,7 @@ type LandingCardTypes = {
   title: string;
   description: string;
   bgColor?: string;
-  index?: number
+  index?: number;
 };
 type AssistanceAccordionType = {
   index: string;
@@ -18,4 +25,9 @@ type AssistanceAccordionType = {
   accordionContent?: string;
 };
 
-export type { NavListType, LandingCardTypes, AssistanceAccordionType };
+export type {
+  NavListType,
+  LandingCardTypes,
+  AssistanceAccordionType,
+  FarmerNavlistType,
+};

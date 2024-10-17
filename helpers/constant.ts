@@ -1,4 +1,4 @@
-import { AssistanceAccordionType, LandingCardTypes, NavListType } from "./types/types";
+import { AssistanceAccordionType, FarmerNavlistType, LandingCardTypes, NavListType } from "./types/types";
 
 const navList: NavListType[] = [
   {
@@ -68,24 +68,32 @@ const assistanceAccordionData: AssistanceAccordionType[] = [
     accordionContent: "",
   },
 ];
-const farmerNavData: NavListType[] = [
+const farmerNavData: FarmerNavlistType[] = [
   {
-    url: "/dashboard.svg",
+    urlIcon: "/icons/dashboard.svg",
+    urlIconActive: "/icons/dashboardActive.svg",
     label: "Dashboard",
+    urlPage: "/farmer/dashboard",
   },
   {
-    url: "/assistance-IA.svg",
+    urlIcon: "/icons/assistance-IA.svg",
+    urlIconActive: "/icons/assistanceActive.svg",
     label: "Assistance IA",
+    urlPage: "",
   },
   {
-    url: "/produit.svg",
+    urlIcon: "/icons/produit.svg",
+    urlIconActive: "/icons/produitActive.svg",
     label: "Produit",
-    title:"produit"
+    title: "produit",
+    urlPage: "",
   },
   {
-    url: "/parametre.svg",
+    urlIcon: "/icons/parametre.svg",
+    urlIconActive: "/icons/parametreActive.svg",
     label: "Compte agriculteur",
-    title:"parametre"
+    title: "parametre",
+    urlPage: "",
   },
 ];
 export { navList, landingCardData, assistanceAccordionData,farmerNavData };
