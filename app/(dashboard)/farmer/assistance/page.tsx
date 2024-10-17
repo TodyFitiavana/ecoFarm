@@ -9,7 +9,7 @@ const FarmerDashboard: FC = (): JSX.Element => {
     <section className="farmer-assistance bg-[#F3F9FA] h-screen overflow-x-hidden">
       <FarmerLayout>
         {/* Farm Dashboard Content */}
-        <div className="farm-assistance__content ml-[330px] h-[450px] px-5 mt-8 flex gap-7">
+        <div className="container mx-auto farm-assistance__content ml-[330px] h-[450px] px-5 flex gap-7 mt-[100px]">
           {/* Left content section */}
           <AssistanceLeftPart />
           <div className="content-right w-[30%]"></div>

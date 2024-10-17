@@ -6,7 +6,7 @@ const CategoriesSection: FC = (): JSX.Element => {
   return (
     <div className="categories mt-11">
       <header>
-        <h3 className="text-black text-xl font-cal-sans">
+        <h3 className="text-secondary text-xl font-cal-sans">
           Catégories d’assistance disponible
         </h3>
       </header>
