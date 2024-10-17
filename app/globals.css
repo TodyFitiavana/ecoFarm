@@ -29,6 +29,8 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+    --grey: rgba(240, 234, 210, 0.60);
+    --black: #364423
   }
 
   .dark {
@@ -70,22 +72,24 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 .slide-in {
   position: relative;
   right: 0;
   transition: transform 0.3s ease-in-out;
 }
 
-@media screen and (min-width: 768px){
-    .slide-in{
-      width: 100%;
-      height: 100%;
-    }
-    .slide-out{
-      right: 0;
-      width: 100%;
-    }
+@media screen and (min-width: 768px) {
+  .slide-in {
+    width: 100%;
+    height: 100%;
   }
+
+  .slide-out {
+    right: 0;
+    width: 100%;
+  }
+}
 
 .slide-out {
   transform: translateX(100%);

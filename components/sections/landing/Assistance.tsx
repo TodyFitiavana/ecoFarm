@@ -6,7 +6,10 @@ import SectionHeader from "./components/SectionHeader";
 import AssistanceAccordion from "./components/AssistanceAccordion";
 import { assistanceAccordionData } from "@/helpers/constant";
 import { motion } from "framer-motion";
-import { containerVariants, itemVariants } from "@/helpers/framerMotion/framerMotion";
+import {
+  containerVariants,
+  itemVariants,
+} from "@/helpers/framerMotion/framerMotion";
 
 const Assistance = () => {
   return (
