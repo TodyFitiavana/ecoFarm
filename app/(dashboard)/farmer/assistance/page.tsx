@@ -6,7 +6,7 @@ import React, { FC } from "react";
 
 const FarmerDashboard: FC = (): JSX.Element => {
   return (
-    <section className="farmer-assistance bg-[#F3F9FA] h-screen overflow-x-hidden mb-5">
+    <section className="farmer-assistance bg-[#F3F9FA] h-screen overflow-x-hidden">
       <FarmerLayout>
         {/* Farm Dashboard Content */}
         <div className="farm-assistance__content ml-[330px] h-[450px] px-5 mt-8 flex gap-7">
