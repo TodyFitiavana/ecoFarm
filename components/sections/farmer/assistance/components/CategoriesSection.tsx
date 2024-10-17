@@ -10,7 +10,7 @@ const CategoriesSection: FC = (): JSX.Element => {
           Catégories d’assistance disponible
         </h3>
       </header>
-      <div className="content grid grid-cols-2 gap-7">
+      <div className="content grid grid-cols-2 gap-7 mt-5">
         {farmerCardData.map((item, index) => (
           <FarmerCard key={index} {...item} />
         ))}
