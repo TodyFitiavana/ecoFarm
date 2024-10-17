@@ -8,7 +8,6 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-// import { motion } from "framer-motion";
 import { LandingCardTypes } from "@/helpers/types/types";
 import { motion } from "framer-motion";
 import { containerVariants } from "@/helpers/framerMotion/framerMotion";
