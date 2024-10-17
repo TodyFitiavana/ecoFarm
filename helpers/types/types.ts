@@ -8,11 +8,24 @@ type LandingCardTypes = {
   title: string;
   description: string;
   bgColor?: string;
-  index?: number
+  index?: number;
 };
 type AssistanceAccordionType = {
   index: string;
   accordionTrigger: string;
   accordionContent?: string;
 };
-export type { NavListType, LandingCardTypes, AssistanceAccordionType };
+
+type FarmerCardTypes = {
+  iconURL: string;
+  title: string;
+  description: string;
+  iconColor?: string;
+};
+
+export type {
+  NavListType,
+  LandingCardTypes,
+  AssistanceAccordionType,
+  FarmerCardTypes,
+};

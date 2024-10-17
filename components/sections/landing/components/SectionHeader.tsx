@@ -34,7 +34,7 @@ const SectionHeader: React.FC<headersection> = ({
       >
         {subTitle}{" "}
         <motion.span
-          className={`text-[#364423] bg-slate-300 p-2 rounded-full ${
+          className={`text-black bg-slate-300 p-2 rounded-full ${
             !name && "hidden"
           }`}
           variants={containerVariants}

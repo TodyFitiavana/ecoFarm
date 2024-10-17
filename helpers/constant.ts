@@ -1,4 +1,9 @@
-import { AssistanceAccordionType, LandingCardTypes, NavListType } from "./types/types";
+import {
+  AssistanceAccordionType,
+  FarmerCardTypes,
+  LandingCardTypes,
+  NavListType,
+} from "./types/types";
 
 const navList: NavListType[] = [
   {
@@ -26,7 +31,7 @@ const landingCardData: LandingCardTypes[] = [
     description:
       "Intégration de l’IA pour conseiller les agriculteurs afin d’avoir une meilleure production.",
     bgColor: "rgba(217, 242, 180, 1)",
-    index:0
+    index: 0,
   },
   {
     lotlie: "/lottie/features-2.json",
@@ -34,7 +39,7 @@ const landingCardData: LandingCardTypes[] = [
     description:
       "Permettant à l’agriculteur de vendre ses produits agricoles et au consommateur de les acheter.",
     bgColor: "rgba(188, 244, 245, 1)",
-    index:1
+    index: 1,
   },
   {
     lotlie: "/lottie/features-3.json",
@@ -42,7 +47,7 @@ const landingCardData: LandingCardTypes[] = [
     description:
       "Dans EcoFarm, les données des utilisateurs sont sécurisés par la reconaissance faciale et autres.",
     bgColor: "rgba(255, 183, 195, 1)",
-    index:2
+    index: 2,
   },
 ];
 
@@ -69,4 +74,21 @@ const assistanceAccordionData: AssistanceAccordionType[] = [
   },
 ];
 
-export { navList, landingCardData, assistanceAccordionData };
+const farmerCardData: FarmerCardTypes[] = [
+  {
+    description:
+      "Cette catégorie vous permet de prédire les conditions climatiques optimales.",
+    iconURL: "/icons/earth-leaf.svg",
+    title: "Prédiction Climatique pour Produits Agricoles",
+    iconColor: "#BCF4F5",
+  },
+  {
+    description:
+      "Cette catégorie vous aide à identifier les types de sol les plus favorables .",
+      iconURL: "/icons/weather.svg",
+    title: "Prédiction de Sol Favorable",
+    iconColor: "#FFB7C3",
+  },
+];
+
+export { navList, landingCardData, assistanceAccordionData, farmerCardData };
