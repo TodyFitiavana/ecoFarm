@@ -1,6 +1,7 @@
 "use client";
 
 import AssistanceLeftPart from "@/components/sections/farmer/assistance/AssistanceLeftPart";
+import AssistanceRightPart from "@/components/sections/farmer/assistance/AssistanceRightPart";
 import FarmerLayout from "@/layouts/FarmerLayout";
 import React, { FC } from "react";
 
@@ -9,10 +10,13 @@ const FarmerDashboard: FC = (): JSX.Element => {
     <section className="farmer-assistance bg-[#F3F9FA] h-screen overflow-x-hidden">
       <FarmerLayout>
         {/* Farm Dashboard Content */}
-        <div className="container mx-auto farm-assistance__content ml-[330px] h-[450px] px-5 flex gap-7 mt-[100px]">
-          {/* Left content section */}
-          <AssistanceLeftPart />
-          <div className="content-right w-[30%]"></div>
+        <div className="farm-assistance__content ml-[330px] w-[calc(100%-330px)] px-5 mt-[100px] mb-10">
+          <div className="w-full container mx-auto flex gap-7">
+            {/* Left content section */}
+            <AssistanceLeftPart />
+            {/* Right content section */}
+            <AssistanceRightPart />
+          </div>
         </div>
       </FarmerLayout>
     </section>
