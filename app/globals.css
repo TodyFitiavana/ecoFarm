@@ -30,7 +30,7 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
     --grey: rgba(240, 234, 210, 0.60);
-    --black: #364423
+    --black: rgba(40, 40, 40, 0.9)
   }
 
   .dark {
