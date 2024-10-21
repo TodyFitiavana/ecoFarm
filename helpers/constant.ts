@@ -1,4 +1,9 @@
-import { AssistanceAccordionType, FarmerNavlistType, LandingCardTypes, NavListType } from "./types/types";
+import {
+  AssistanceAccordionType,
+  FarmerNavlistType,
+  LandingCardTypes,
+  NavListType,
+} from "./types/types";
 
 const navList: NavListType[] = [
   {
@@ -26,7 +31,7 @@ const landingCardData: LandingCardTypes[] = [
     description:
       "Intégration de l’IA pour conseiller les agriculteurs afin d’avoir une meilleure production.",
     bgColor: "rgba(217, 242, 180, 1)",
-    index:0
+    index: 0,
   },
   {
     lotlie: "/lottie/features-2.json",
@@ -34,7 +39,7 @@ const landingCardData: LandingCardTypes[] = [
     description:
       "Permettant à l’agriculteur de vendre ses produits agricoles et au consommateur de les acheter.",
     bgColor: "rgba(188, 244, 245, 1)",
-    index:1
+    index: 1,
   },
   {
     lotlie: "/lottie/features-3.json",
@@ -42,7 +47,7 @@ const landingCardData: LandingCardTypes[] = [
     description:
       "Dans EcoFarm, les données des utilisateurs sont sécurisés par la reconaissance faciale et autres.",
     bgColor: "rgba(255, 183, 195, 1)",
-    index:2
+    index: 2,
   },
 ];
 
@@ -96,4 +101,58 @@ const farmerNavData: FarmerNavlistType[] = [
     urlPage: "",
   },
 ];
-export { navList, landingCardData, assistanceAccordionData,farmerNavData };
+const data = [
+  {
+    id: 1,
+    Facture: "001-2024",
+    Total: 250000,
+    livraison: "LOT AB 45C",
+    date: "05/09/2024",
+    num: "0344705608",
+  },
+  {
+    id: 1,
+    Facture: "001-2024",
+    Total: 250000,
+    livraison: "Ambohidratrimo",
+    date: "05/09/2024",
+    num: "0344705608",
+  },
+  {
+    id: 1,
+    Facture: "001-2024",
+    Total: 250000,
+    livraison: "Ambatolampy",
+    date: "05/09/2024",
+    num: "0344705608",
+  },
+
+  {
+    id: 1,
+    Facture: "001-2024",
+    Total: 250000,
+    livraison: "Ambohibao",
+    date: "05/09/2024",
+    num: "0344705608",
+  },
+];
+
+const columns = [
+  { header: "ID", accessor: (row) => row.id },
+  { header: "Facture", accessor: (row) => row.Facture },
+  { header: "Total à payer", accessor: (row) => row.Total },
+  { header: "Point de vente / livraison", accessor: (row) => row.livraison },
+  { header: "date de facturation", accessor: (row) => row.date },
+  { header: "numéro client", accessor: (row) => row.num },
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  { header: "Action", accessor: (row) => "" },
+];
+
+export {
+  navList,
+  landingCardData,
+  assistanceAccordionData,
+  farmerNavData,
+  data,
+  columns,
+};
