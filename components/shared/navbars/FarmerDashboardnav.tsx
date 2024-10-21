@@ -17,7 +17,7 @@ import { usePathname } from "next/navigation";
 const FarmerDashboardNav: FC = (): JSX.Element => {
   const pathName = usePathname();
   return (
-    <div className="farmer-nav h-[calc(100vh-80px)] p-5 fixed mt-[77px]">
+    <div className="farmer-nav h-[calc(100vh-80px)] p-5 fixed mt-[77px] z-40">
       <nav className="w-[300px] h-full rounded-xl bg-white flex flex-col justify-between">
         <NavigationMenu className="ml-5 mr-5">
           <NavigationMenuList className="space-y-5">
