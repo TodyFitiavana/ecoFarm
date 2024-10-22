@@ -1,6 +1,6 @@
 "use client";
 
-import SalesBoard from "@/components/sections/farmer/product/components/SelesBoard";
+import SalesBoard from "@/components/sections/farmer/product/components/SalesBoard";
 import { Button } from "@/components/ui/button";
 import FarmerLayout from "@/layouts/FarmerLayout";
 import React, { FC } from "react";
