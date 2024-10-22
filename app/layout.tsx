@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Montserrat } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import "cal-sans";
 import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/lib/redux/provider";
 
-const montserrat = Montserrat({
+const inter_tight = Inter_Tight({
   subsets: ["latin"],
   weight: ["500"],
   // display: "swap",
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <Providers>
-      <html lang="en" className={montserrat.className}>
+      <html lang="en" className={inter_tight.className}>
         <body>
           <main>{children}</main>
           <Toaster />
