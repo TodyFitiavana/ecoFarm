@@ -18,7 +18,7 @@ const FarmerDashboardheader: FC = (): JSX.Element => {
     },
   });
   return (
-    <header className="farmer-header w-full overflow-hidden h-[75px] bg-white fixed">
+    <header className="farmer-header w-full overflow-hidden h-[75px] bg-white fixed z-40">
       <div className="mx-auto px-10 flex justify-between items-center h-full py-4">
         {/* Logo */}
         <img src="/logo.svg" alt="logo" className="object-cover" />

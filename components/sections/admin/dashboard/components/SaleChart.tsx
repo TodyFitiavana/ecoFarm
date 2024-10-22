@@ -32,7 +32,7 @@ import { Button } from "@/components/ui/button";
 
 export function SaleChart() {
   return (
-    <Card className="w-full">
+    <Card className="w-full my-4">
       <CardHeader className="flex flex-row justify-between items-center">
         <CardTitle className="flex flex-row gap-5 justify-center items-center">
           <span>Ventes</span>

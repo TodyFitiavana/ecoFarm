@@ -4,8 +4,8 @@ import React from "react";
 
 const FarmerDashboardCard = () => {
   return (
-    <div className="farmer-dashboard w-full h-full flex items-center justify-around">
-      <div className="flex gap-10">
+    <div className="farmer-dashboard w-full h-full">
+      <div className="flex justify-between items-center">
         <div className="bg-[#F0EAD299] flex justify-between items-center p-6 rounded-lg gap-5">
           <div className="flex flex-col  ">
             <h1 className="font-bold text-secondary text-xl">20 000 AR</h1>

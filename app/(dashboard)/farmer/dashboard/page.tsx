@@ -11,10 +11,12 @@ const FarmerDashboard: FC = (): JSX.Element => {
     <section className="farmer-dashboard bg-[#F3F9FA] h-screen overflow-x-hidden">
       <FarmerLayout>
         {/* Farm Dashboard Content */}
-        <div className="farm-dashboard__content ml-[330px] h-[450px] px-5 mt-8">
+        <div className="farm-dashboard__content ml-[330px] h-[450px] px-5 mt-[100px]">
           {/* Stats section */}
-          <div className="dashboard-stats w-full h-[200px]">
-            <FarmerDashboardCard />
+          <div className="dashboard-stats w-full h-[200px] ">
+            <section>
+              <FarmerDashboardCard />
+            </section>
             <section>
               <SaleChart />
             </section>
