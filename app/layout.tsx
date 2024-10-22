@@ -5,7 +5,7 @@ import "cal-sans";
 import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/lib/redux/provider";
 
-const inter_tight = Inter_Tight({
+const inter = Inter_Tight({
   subsets: ["latin"],
   weight: ["500"],
   // display: "swap",
@@ -23,7 +23,7 @@ export default function RootLayout({
 }>) {
   return (
     <Providers>
-      <html lang="en" className={inter_tight.className}>
+      <html lang="en" className={inter.className}>
         <body>
           <main>{children}</main>
           <Toaster />
