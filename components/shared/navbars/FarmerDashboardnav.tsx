@@ -11,21 +11,18 @@ import {
 } from "@radix-ui/react-navigation-menu";
 import { farmerNavData } from "@/helpers/constant";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils"; // Assuming you have a utility for handling classnames
+import { cn } from "@/lib/utils";
 import { usePathname } from "next/navigation";
 
 const FarmerDashboardNav: FC = (): JSX.Element => {
   const pathName = usePathname();
   return (
-    <div className="farmer-nav h-[calc(100vh-80px)] p-5 fixed mt-3">
+    <div className="farmer-nav h-[calc(100vh-80px)] p-5 fixed mt-[77px] z-40">
       <nav className="w-[300px] h-full rounded-xl bg-white flex flex-col justify-between">
         <NavigationMenu className="ml-5 mr-5">
           <NavigationMenuList className="space-y-5">
             {farmerNavData.map((item, index) => (
-              <NavigationMenuItem
-                key={index}
-                className="mt-5 flex flex-col"
-              >
+              <NavigationMenuItem key={index} className="mt-5 flex flex-col">
                 <NavigationMenuTrigger
                   className={cn(
                     "font-bold text-[15px] uppercase text-start ml-5"
@@ -38,10 +35,9 @@ const FarmerDashboardNav: FC = (): JSX.Element => {
                     href="#"
                     className={cn(
                       "flex items-center gap-5  pl-10 cursor-pointer p-4",
-                        pathName === item.urlPage
-                          ?  "border-primary text-primary bg-[#F3F9FA] p-4 rounded-lg"
-                          :  "text-[#494848]"
-                       
+                      pathName === item.urlPage
+                        ? "border-primary text-primary bg-[#F3F9FA] p-4 rounded-lg"
+                        : "text-[#494848]"
                     )}
                   >
                     <img

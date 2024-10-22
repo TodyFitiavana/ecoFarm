@@ -85,7 +85,7 @@ const farmerNavData: FarmerNavlistType[] = [
     urlIcon: "/icons/assistance-IA.svg",
     urlIconActive: "/icons/assistanceActive.svg",
     label: "Assistance IA",
-    urlPage: "",
+    urlPage: "/farmer/assistance",
   },
   {
     urlIcon: "/icons/produit.svg",
@@ -172,5 +172,5 @@ export {
   farmerNavData,
   data,
   columns,
-  farmerCardData
+  farmerCardData,
 };
