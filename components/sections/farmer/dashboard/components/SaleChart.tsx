@@ -7,7 +7,6 @@ import {
   YAxis,
   CartesianGrid,
   Tooltip,
-  Legend,
 } from "recharts";
 import {
   Select,
@@ -32,7 +31,7 @@ import { Button } from "@/components/ui/button";
 
 export function SaleChart() {
   return (
-    <Card className="w-full my-4">
+    <Card className="w-full mt-7">
       <CardHeader className="flex flex-row justify-between items-center">
         <CardTitle className="flex flex-row gap-5 justify-center items-center">
           <span>Ventes</span>
@@ -58,8 +57,6 @@ export function SaleChart() {
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Legend />
-            <Bar dataKey="month" fill="var(--color-month)" />
             <Bar dataKey="value" fill="var(--color-desktop)" radius={10} />
           </BarChart>
         </ChartContainer>

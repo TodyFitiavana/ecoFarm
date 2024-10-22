@@ -85,7 +85,7 @@ const farmerNavData: FarmerNavlistType[] = [
     urlIcon: "/icons/assistance-IA.svg",
     urlIconActive: "/icons/assistanceActive.svg",
     label: "Assistance IA",
-    urlPage: "",
+    urlPage: "/farmer/assistance",
   },
   {
     urlIcon: "/icons/produit.svg",
@@ -102,41 +102,6 @@ const farmerNavData: FarmerNavlistType[] = [
     urlPage: "",
   },
 ];
-const data = [
-  {
-    id: 1,
-    Facture: "001-2024",
-    Total: 250000,
-    livraison: "LOT AB 45C",
-    date: "05/09/2024",
-    num: "0344705608",
-  },
-  {
-    id: 1,
-    Facture: "001-2024",
-    Total: 250000,
-    livraison: "Ambohidratrimo",
-    date: "05/09/2024",
-    num: "0344705608",
-  },
-  {
-    id: 1,
-    Facture: "001-2024",
-    Total: 250000,
-    livraison: "Ambatolampy",
-    date: "05/09/2024",
-    num: "0344705608",
-  },
-  {
-    id: 1,
-    Facture: "001-2024",
-    Total: 250000,
-    livraison: "Ambohibao",
-    date: "05/09/2024",
-    num: "0344705608",
-  },
-];
-
 const farmerCardData: FarmerCardTypes[] = [
   {
     description:
@@ -153,24 +118,10 @@ const farmerCardData: FarmerCardTypes[] = [
     iconColor: "#FFB7C3",
   },
 ];
-
-const columns = [
-  { header: "ID", accessor: (row) => row.id },
-  { header: "Facture", accessor: (row) => row.Facture },
-  { header: "Total à payer", accessor: (row) => row.Total },
-  { header: "Point de vente / livraison", accessor: (row) => row.livraison },
-  { header: "date de facturation", accessor: (row) => row.date },
-  { header: "numéro client", accessor: (row) => row.num },
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  { header: "Action", accessor: (row) => "" },
-];
-
 export {
   navList,
   landingCardData,
   assistanceAccordionData,
   farmerNavData,
-  data,
-  columns,
-  farmerCardData
+  farmerCardData,
 };

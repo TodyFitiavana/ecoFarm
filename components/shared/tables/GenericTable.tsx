@@ -1,3 +1,4 @@
+import React from "react";
 import {
   Table,
   TableBody,
@@ -6,7 +7,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { FaPrint } from "react-icons/fa";
+import { FaEdit, FaTrash } from "react-icons/fa";
 
 export interface Column<T> {
   header: string;
@@ -45,7 +46,6 @@ const GenericTable = <T,>({ data, columns, ...props }: Props<T>) => {
             key={rowIndex}
             className="border-none hover:bg-primary-foreground bg-white"
           >
-            {" "}
             {columns.map((col, colIndex) => (
               <TableCell
                 key={colIndex}
@@ -55,12 +55,20 @@ const GenericTable = <T,>({ data, columns, ...props }: Props<T>) => {
                     : colIndex === columns.length - 1
                     ? "rounded-tr-md rounded-br-md"
                     : ""
+                } ${
+                  col.header === "Status"
+                    ? col.accessor(row) === "Indisponible"
+                      ? "text-red-500"
+                      : "text-green-500"
+                    : ""
                 }`}
               >
-                {" "}
                 {col.accessor(row)}
                 {colIndex === columns.length - 1 && (
-                  <FaPrint className="ml-2 text-blue-800" />
+                  <div className="flex">
+                    <FaEdit className="ml-2 text-blue-800" />
+                    <FaTrash className="ml-2 text-red-500" />
+                  </div>
                 )}
               </TableCell>
             ))}
