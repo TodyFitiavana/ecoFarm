@@ -19,6 +19,9 @@ const About: React.FC = (): JSX.Element => {
               en trois aspects clés.
             </p>
           </header>
+          <div className="content">
+             
+          </div>
         </div>
       </div>
     </section>

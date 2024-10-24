@@ -12,17 +12,10 @@ type FarmerNavlistType = {
   urlPage?: string;
 };
 
-type LandingCardTypes = {
-  lotlie: string;
+type aboutCardTypes = {
   title: string;
   description: string;
-  bgColor?: string;
-  index?: number;
-};
-type AssistanceAccordionType = {
-  index: string;
-  accordionTrigger: string;
-  accordionContent?: string;
+  iconURL: string;
 };
 
 type FarmerCardTypes = {
@@ -32,10 +25,4 @@ type FarmerCardTypes = {
   iconColor?: string;
 };
 
-export type {
-  NavListType,
-  LandingCardTypes,
-  AssistanceAccordionType,
-  FarmerCardTypes,
-  FarmerNavlistType,
-};
+export type { NavListType, aboutCardTypes, FarmerCardTypes, FarmerNavlistType };
