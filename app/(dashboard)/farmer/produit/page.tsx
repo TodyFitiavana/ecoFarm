@@ -15,7 +15,7 @@ const FarmerProduit: FC = (): JSX.Element => {
           {/* Stats section */}
           <div className="dashboard-stats w-full h-[200px]">
             <header className="flex justify-between items-center">
-                <h1 className="font-bold text-[25px]">Produit</h1>
+                <h1 className="font-semibold text-[25px]">Produit</h1>
                 <Button className="text-white" Icon={FaPlus} iconPlacement="left">Ajouter produit</Button>
             </header>
            <section>

@@ -28,7 +28,7 @@ const LandingCard: React.FC<LandingCardTypes> = ({
     >
       <DotLottiePlayer src={`${lotlie}`} loop autoplay className="w-[150px]" />
       <CardHeader>
-        <CardTitle className="font-cal-sans from-neutral-600 text-[25px]">
+        <CardTitle className="font-semibold from-neutral-600 text-[25px]">
           <motion.div
             variants={containerVariants}
             initial="hidden"

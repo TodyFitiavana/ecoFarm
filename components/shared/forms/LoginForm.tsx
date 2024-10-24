@@ -36,7 +36,7 @@ const LoginForm: React.FC = (): JSX.Element => {
       <header className="flex flex-col gap-3">
         {/* Logo */}
         <img src="/logo.svg" alt="logo" className="object-cover w-[150px]" />
-        <h4 className="text-secondary text-3xl font-cal-sans">
+        <h4 className="text-secondary text-3xl font-semibold">
           Content de vous revoir !
         </h4>
         <p className="text-secondary-foreground">

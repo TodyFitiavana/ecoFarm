@@ -8,7 +8,7 @@ import { Providers } from "@/lib/redux/provider";
 const inter = Inter_Tight({
   subsets: ["latin"],
   weight: ["500"],
-  // display: "swap",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
