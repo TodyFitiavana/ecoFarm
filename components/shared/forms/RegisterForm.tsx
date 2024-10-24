@@ -45,7 +45,7 @@ const RegisterForm: React.FC = (): JSX.Element => {
       <header className="flex flex-col gap-3 items-center">
         {/* Logo */}
         <img src="/logo.svg" alt="logo" className="object-cover w-[150px]" />
-        <h4 className="text-secondary text-[1.7em] font-cal-sans text-center">
+        <h4 className="text-secondary text-[1.7em] font-semibold text-center">
           Finalisez la création de votre compte
         </h4>
         <p className="text-secondary-foreground text-center">

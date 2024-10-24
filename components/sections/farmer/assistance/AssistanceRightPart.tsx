@@ -11,7 +11,7 @@ const AssistanceRightPart: FC = (): JSX.Element => {
         className="consulted-recently h-[270px] w-full bg-cover rounded-lg p-5 flex flex-col justify-between"
         style={{ backgroundImage: `url("/tomate.jpeg")` }}
       >
-        <h3 className="font-cal-sans text-[23px] text-white text-shadow">
+        <h3 className="font-semibold text-[23px] text-white text-shadow">
           Consulté récemment
         </h3>
         <p className="text-white font-semibold text-shadow">
@@ -29,7 +29,7 @@ const AssistanceRightPart: FC = (): JSX.Element => {
           />
         </div>
         <div className="card-content mt-2 flex flex-col gap-3">
-          <h3 className="text-secondary font-cal-sans text-xl">
+          <h3 className="text-secondary font-semibold text-xl">
             Besoin d’aide ou d’assistance ?
           </h3>
           <Button className="flex items-center">

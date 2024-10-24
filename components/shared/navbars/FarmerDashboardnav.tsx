@@ -25,7 +25,7 @@ const FarmerDashboardNav: FC = (): JSX.Element => {
               <NavigationMenuItem key={index} className="mt-5 flex flex-col">
                 <NavigationMenuTrigger
                   className={cn(
-                    "font-bold text-[15px] uppercase text-start ml-5"
+                    "font-semibold text-[15px] uppercase text-start ml-5"
                   )}
                 >
                   {item.title}

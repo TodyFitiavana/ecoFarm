@@ -21,7 +21,7 @@ const FarmerCard: FC<FarmerCardTypes> = ({
         <Image src="/icons/right.svg" alt="icon" width={30} height={30} />
       </CardHeader>
       <CardContent className="p-0 mt-8">
-        <h2 className="text-secondary font-cal-sans text-xl">{title}</h2>
+        <h2 className="text-secondary font-semibold text-xl">{title}</h2>
         <p className="text-secondary-foreground mt-2">{description}</p>
       </CardContent>
     </Card>

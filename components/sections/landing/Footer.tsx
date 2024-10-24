@@ -37,7 +37,7 @@ const Footer = () => {
             whileInView="visible"
           >
             <motion.h1
-              className="font-cal-sans lg:text-[40px] text-[2rem]"
+              className="font-semibold lg:text-[40px] text-[2rem]"
               variants={containerVariants}
               initial="hidden"
               whileInView="visible"
@@ -93,7 +93,7 @@ const Footer = () => {
           whileInView="visible"
         >
           <motion.h1
-            className="font-cal-sans lg:text-[37px] text-[2rem]"
+            className="font-semibold lg:text-[37px] text-[2rem]"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -102,7 +102,7 @@ const Footer = () => {
             Restez serein.
           </motion.h1>
           <motion.h1
-            className="font-cal-sans lg:text-[37px] text-[2rem] mt-[-12px]"
+            className="font-semibold lg:text-[37px] text-[2rem] mt-[-12px]"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"

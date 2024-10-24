@@ -27,7 +27,7 @@ const SectionHeader: React.FC<headersection> = ({
         {title}
       </motion.h2>
       <motion.h1
-        className="text-[30px] font-cal-sans"
+        className="text-[30px] font-semibold"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
