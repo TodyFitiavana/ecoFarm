@@ -2,14 +2,9 @@
 
 import React from "react";
 import { DotLottiePlayer } from "@dotlottie/react-player";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { motion } from "framer-motion";
+
 import { containerVariants } from "@/helpers/framerMotion/framerMotion";
 import Image from "next/image";
 import { aboutCardTypes } from "@/helpers/types/types";
@@ -20,7 +15,7 @@ const LandingCard: React.FC<aboutCardTypes> = ({
   description,
 }): JSX.Element => {
   return (
-    <Card className="bg-white border-0 shadow-none p-6">
+    <Card className="bg-white hover:bg-primary-foreground hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] border-0 shadow-none p-6">
       <CardHeader className="p-0">
         <div className="bg bg-grey02 w-max p-3 rounded-lg">
           <Image alt="icon" src={iconURL} width={22} height={22} />

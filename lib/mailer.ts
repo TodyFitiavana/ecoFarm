@@ -1,5 +1,4 @@
 import { transporter } from "@/helpers/mailerHelper";
-import nodemailer from "node-mailer";
 
 const sendEmail = async (
   userEmail: string,

@@ -10,6 +10,7 @@ import useShow from "@/core/hooks/useShow";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import authServices from "@/services/authServices";
 import { useRouter } from "next/navigation";
+import FacialRecognitionDialog from "../dialogs/FacialRecognitionDialog";
 
 export const facialIcon = () => {
   return <img src="/icons/facial-recognition.svg" alt="facial-icon" />;
@@ -112,14 +113,18 @@ const LoginForm: React.FC = (): JSX.Element => {
       </div>
 
       {/* Facial recognition */}
-      <Button
-        variant="outline"
-        className="border-secondary-foreground gap-1"
-        Icon={facialIcon}
-        iconPlacement="left"
-      >
-        Reconnaissance faciale
-      </Button>
+      <FacialRecognitionDialog
+        Trigger={
+          <Button
+            variant="outline"
+            className="border-secondary-foreground gap-1"
+            Icon={facialIcon}
+            iconPlacement="left"
+          >
+            Reconnaissance faciale
+          </Button>
+        }
+      />
 
       {/* signup */}
       <p className="text-secondary text-center">

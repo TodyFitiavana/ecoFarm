@@ -1,0 +1,27 @@
+import useFacial from "@/hooks/useFacial";
+import React, { FC, Fragment, useEffect } from "react";
+import Webcam from "react-webcam";
+
+const WebCam: FC = (): JSX.Element => {
+  const { canvasRef, webcamRef } = useFacial();
+
+  return (
+    <Fragment>
+      <div className="absolute w-full h-[350px]">
+        <Webcam
+          ref={webcamRef}
+          className="webcam w-full h-full absolute top-0 left-0 rounded-xl"
+          screenshotFormat="image/jpeg"
+          style={{ height: "100%", objectFit: "cover" }}
+        />
+        <canvas
+          ref={canvasRef}
+          className="output_canvas w-full h-full absolute top-0 left-0 rounded-xl"
+          style={{ height: "100%", objectFit: "cover" }}
+        />
+      </div>
+    </Fragment>
+  );
+};
+
+export default WebCam;
