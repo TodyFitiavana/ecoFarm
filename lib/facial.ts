@@ -29,6 +29,7 @@ const detectFace = async (
           .withFaceLandmarks()
           .withFaceExpressions();
 
+        // Filtrer les détections invalides
         const validDetections = detections.filter(
           (d) =>
             d.detection.box &&

@@ -7,7 +7,7 @@ const WebCam: FC = (): JSX.Element => {
 
   return (
     <Fragment>
-      <div className="relative w-full h-[350px]">
+      <div className="absolute w-full h-[350px]">
         <Webcam
           ref={webcamRef}
           className="webcam w-full h-full absolute top-0 left-0 rounded-xl"
