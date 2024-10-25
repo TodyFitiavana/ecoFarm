@@ -62,4 +62,18 @@ const detectFace = async (
   }
 };
 
-export { detectFace, loadModels };
+const stopCamera = (webcamRef: React.RefObject<Webcam> | null) => {
+  if (webcamRef?.current && webcamRef.current.video) {
+    const stream = webcamRef.current.video.srcObject;
+    if (stream instanceof MediaStream) {
+      const tracks = stream.getTracks();
+      tracks.forEach((track) => {
+        track.stop();
+        console.log("Track stopped:", track);
+      });
+      webcamRef.current.video.srcObject = null;
+    }
+  }
+};
+
+export { detectFace, loadModels, stopCamera };
