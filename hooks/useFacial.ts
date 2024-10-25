@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Webcam from "react-webcam";
 import * as faceapi from "face-api.js";
-import { detectFace, loadModels } from "@/lib/facial";
+import { detectFace, loadModels, stopCamera } from "@/lib/facial";
 
 const useFacial = () => {
   const webcamRef = useRef<Webcam>(null);
@@ -25,7 +25,11 @@ const useFacial = () => {
     }
   }, [isDetected]);
 
-  return { webcamRef, canvasRef };
+  const stopWebCam = () => {
+    stopCamera(webcamRef);
+  };
+
+  return { webcamRef, canvasRef, stopWebCam };
 };
 
 export default useFacial;
