@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter_Tight } from "next/font/google";
 import "cal-sans";
-import { Toaster } from "@/components/ui/toaster";
+// import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/lib/redux/provider";
 
 const inter = Inter_Tight({
@@ -26,7 +26,7 @@ export default function RootLayout({
       <html lang="en" className={inter.className}>
         <body>
           <main>{children}</main>
-          <Toaster />
+          {/* <Toaster /> */}
         </body>
       </html>
     </Providers>

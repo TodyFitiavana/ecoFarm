@@ -104,3 +104,12 @@
   background: rgba(255, 255, 255, 0.20);
   backdrop-filter: blur(2px);
 }
+
+.animated {
+  opacity: 0;
+}
+
+.letters {
+  opacity: 0;
+  display: inline-block;
+}

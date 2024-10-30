@@ -1,8 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
+import { useEffect } from "react";
 import AnimatedElement from "@/components/shared/AnimatedElement";
 import { Button } from "@/components/ui/button";
 import { BsArrowUpRightCircle } from "react-icons/bs";
 import { IoIosCloseCircleOutline } from "react-icons/io";
+import SplitText from "@/components/shared/animations/components/SplitText";
+import TextStaggersDown from "@/components/shared/animations/TextStaggersDown";
 
 const HeroContent = () => {
   return (
@@ -12,42 +14,36 @@ const HeroContent = () => {
           <AnimatedElement
             from={{ opacity: 0, x: -55 }}
             to={{ opacity: 1, x: 0 }}
-            delay={0.9}
+            delay={0.4}
             duration={0.5}
           >
             <p className="text-[#D9D9D9] backgroundBlur w-max p-2 px-3 rounded-lg text-sm">
               #1 des Plateformes à Madagascar
             </p>
           </AnimatedElement>
-          <h1 className="text-[2.2em] md:text-[3em] lg:text-[3.3em] font-normal text-start leading-tight">
-            {[
-              "L'agriculture",
-              "Intelligente",
-              "à",
-              "votre",
-              "portée",
-              "de",
-              "main",
-            ].map((word, index) => (
-              <span key={index} className="inline-block">
-                {word.split("").map((letter, i) => (
-                  <span
-                    key={i}
-                    className="inline-block letters"
-                    dangerouslySetInnerHTML={{ __html: letter }}
-                  />
-                ))}
-                {index < 7 && <span className="inline-block">&nbsp;</span>}
-              </span>
-            ))}
-          </h1>
+          <TextStaggersDown
+            from={{
+              opacity: 0,
+              x: 15,
+              y: 56,
+            }}
+            to={{
+              opacity: 1,
+              x: 0,
+              y: 0,
+            }}
+          >
+            <h1 className="text-[2.2em] md:text-[3em] lg:text-[3.3em] font-normal text-start leading-tight">
+              <SplitText text="L'agriculture Itelligente à votre portée de main" />
+            </h1>
+          </TextStaggersDown>
 
           <div className="flex gap-5 md:gap-10">
             <AnimatedElement
-              from={{ opacity: 0, y: -55 }}
+              from={{ y: 155 }}
               to={{ opacity: 1, y: 0 }}
-              delay={0.5}
-              duration={0.5}
+              delay={2}
+              duration={0.4}
             >
               <Button
                 iconPlacement="right"
@@ -61,7 +57,7 @@ const HeroContent = () => {
             <AnimatedElement
               from={{ opacity: 0, y: 55 }}
               to={{ opacity: 1, y: 0 }}
-              delay={0.9}
+              delay={5}
               duration={0.5}
             >
               <Button
@@ -89,8 +85,8 @@ const HeroContent = () => {
               </div>
             </AnimatedElement>
             <AnimatedElement
-              from={{ opacity: 0, x: -55 }}
-              to={{ opacity: 1, x: 0 }}
+              from={{ opacity: 0, y: 55 }}
+              to={{ opacity: 1, y: 0 }}
               delay={0.9}
               duration={0.5}
             >
