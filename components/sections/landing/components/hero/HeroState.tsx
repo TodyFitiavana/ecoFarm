@@ -8,17 +8,17 @@ const HeroState = () => {
     >
       <div className="px-2">
         <h1 className="text-[35px] lg:text-[50px] text-black">+50</h1>
-        <p className="text-[#8E8E8E] text-start w-[190px] lg:w-[170px]">
+        <p className="text-[#8E8E8E] text-start w-[190px] lg:w-[170px] flex-grow">
           Agriculteurs locaux bénéficiaires
         </p>
       </div>
       <div className="px-2">
         <h1 className="text-[35px] lg:text-[50px] text-black">150</h1>
-        <p className="text-[#8E8E8E]">Produits agricoles</p>
+        <p className="text-[#8E8E8E] flex-grow">Produits agricoles</p>
       </div>
       <div className="px-2">
         <h1 className="text-[35px] lg:text-[50px] text-black">125K</h1>
-        <p className="text-[#8E8E8E]">Tonnes de productions</p>
+        <p className="text-[#8E8E8E] flex-grow">Tonnes de productions</p>
       </div>
     </div>
   );

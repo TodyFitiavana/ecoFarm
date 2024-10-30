@@ -6,16 +6,16 @@ import { IoIosCloseCircleOutline } from "react-icons/io";
 const HeroContent = () => {
   return (
     <div className="hero-content w-full">
-      <div className="container mx-auto flex justify-between px-12 w-full">
-        <div className="flex flex-col justify-start gap-5 md:pt-[18vh] w-full md:w-[650px]">
+      <div className="container mx-auto flex justify-between px-5 md:px-12 w-full">
+        <div className="flex flex-col justify-start gap-5 md:pt-[18vh] w-full md:w-[600px]">
           <p className="text-[#D9D9D9] backgroundBlur w-max p-2 px-3 rounded-lg text-sm">
             #1 des Plateformes à Madagascar
           </p>
-          <h1 className="text-[2.6em] md:text-[3em] lg:text-[3.3em] font-normal text-start">
+          <h1 className="text-[2.2em] md:text-[3em] lg:text-[3.3em] font-normal text-start leading-tight">
             L’agriculture Intelligente, à votre portée de main.
           </h1>
 
-          <div className="flex gap-10">
+          <div className="flex gap-5 md:gap-10">
             <Button
               iconPlacement="right"
               Icon={BsArrowUpRightCircle}

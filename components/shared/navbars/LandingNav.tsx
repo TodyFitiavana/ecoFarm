@@ -27,7 +27,7 @@ const LandingNav: FC = (): JSX.Element => {
   return (
     <nav className="w-full overflow-hidden fixed lg:relative top-0 z-50">
       <div className="bg-white">
-        <div className="container mx-auto py-5 px-10 flex items-center justify-between">
+        <div className="lg:container mx-auto py-5 px-5 md:px-10 flex items-center justify-between">
           {/* Logo */}
 
           <img src="/logo.svg" alt="logo" className="object-cover" />
@@ -40,7 +40,7 @@ const LandingNav: FC = (): JSX.Element => {
             <img
               src="icons/menu.svg"
               alt="menu"
-              className="object-cover w-[40px]"
+              className="object-cover w-[35px]"
             />
           </div>
 
