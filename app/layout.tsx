@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Inter_Tight} from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import "cal-sans";
 import { Toaster } from "@/components/ui/toaster";
 import { Providers } from "@/lib/redux/provider";

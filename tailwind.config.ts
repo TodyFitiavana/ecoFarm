@@ -47,9 +47,12 @@ const config: Config = {
           DEFAULT: "var(--grey)",
           foreground: "hsl(var(--destructive-foreground))",
         },
-		black : {
-			DEFAULT: "var(--black)"
-		},
+        black: {
+          DEFAULT: "var(--black)",
+        },
+        grey02: {
+          DEFAULT: "#F3F9FA"
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

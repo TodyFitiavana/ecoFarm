@@ -2,44 +2,29 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import LandingCard from "@/components/shared/cards/LandingCard";
+import { aboutCardData } from "@/helpers/constant";
 import React from "react";
-import { Button } from "@/components/ui/button";
-import { FaArrowRight } from "react-icons/fa";
-import SectionHeader from "./components/SectionHeader";
 
 const About: React.FC = (): JSX.Element => {
   return (
-    <section className="landing-about mt-[4rem] w-full overflow-hidden">
-      <div className="container mx-auto flex gap-14 lg:px-16 px-5 items-center lg:flex-row flex-col">
-        <div className="landing-About-left w-[40%] lg:flex hidden">
-          <img
-            src="/Tomato.svg"
-            alt="About-image"
-            className="object-contain w-full"
-          />
-        </div>
-
-        <div className="landing-About-right lg:w-[60%] w-full flex flex-col gap-5 pl-10">
-          <SectionHeader
-            title="A propos"
-            subTitle="Parlons  un peu de"
-            name="ecofarm"
-          />
-          <p className="text-secondary-foreground">
-            EcoFarm est une plateforme innovante où les agriculteurs peuvent
-            demander des conseils personnalisés à l'IA pour optimiser leur
-            production agricole. De plus, elle permet de vendre directement
-            leurs produits à des prix raisonnables.
-          </p>
-          <div>
-            <Button
-              Icon={FaArrowRight}
-              size="default"
-              iconPlacement="right"
-              className="rounded-full"
-            >
-              En savoir plus
-            </Button>
+    <section className="landing-about mt-[4rem] w-full overflow-hidden bg-white pb-5">
+      <div className="container mx-auto flex gap-14 lg:px-14 px-5 items-center lg:flex-row flex-col">
+        <div className="landing-about__container bg-grey02 w-full p-14 flex flex-col items-center rounded-[34px]">
+          <header className="text-center">
+            <h2 className="text-black font-semibold text-3xl">
+              Qui sommes-Nous?
+            </h2>
+            <p className="text-secondary-foreground w-[580px] mt-3">
+              Nous visons à aider les agriculteurs à améliorer leur production
+              et à vendre leurs produits à des prix équitables. Elle se décline
+              en trois aspects clés.
+            </p>
+          </header>
+          <div className="content grid gap-5 grid-cols-3 mt-16">
+            {aboutCardData.map((item, index) => (
+              <LandingCard key={index} {...item} />
+            ))}
           </div>
         </div>
       </div>

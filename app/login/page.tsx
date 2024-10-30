@@ -13,7 +13,7 @@ const Login: React.FC = (): JSX.Element => {
       </div>
       <div className="login__right bg-[url('/login-bg.webp')] w-[47%] min-h-screen bg-cover flex items-end p-5">
         <div className="backdrop-blur-sm p-5 h-max rounded-xl">
-          <p className="text-center text-white font-semibold font-cal-sans text-[1.8rem]">
+          <p className="text-center text-white font-semibold font-semibold text-[1.8rem]">
             Ensemble, créons une agriculture innovante et durable grâce à {"  "}
             <span className="text-primary">EcoFarm</span> !
           </p>
