@@ -11,7 +11,7 @@ const LandingCard: React.FC<AboutCardTypes> = ({
   description,
 }): JSX.Element => {
   return (
-    <Card className="bg-white border-0 shadow-none p-6">
+    <Card className="bg-white hover:bg-primary-foreground hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-1px_rgba(0,0,0,0.06)] border-0 shadow-none p-6">
       <CardHeader className="p-0">
         <div className="bg bg-grey02 w-max p-3 rounded-lg">
           <Image alt="icon" src={iconURL} width={22} height={22} />
