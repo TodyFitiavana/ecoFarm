@@ -2,63 +2,25 @@
 /* eslint-disable react/no-unescaped-entities */
 import FooterNav from "@/components/shared/navbars/footer/FooterNav";
 import { Button } from "@/components/ui/button";
-import {
-  containerVariants,
-  itemVariants,
-} from "@/helpers/framerMotion/framerMotion";
-import { motion } from "framer-motion";
+
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <motion.section
-      className="w-full overflow-hidden"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-    >
-      <motion.div
-        className="bg-[#D9F2B4]"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-      >
-        <motion.div
-          className="container mx-auto flex lg:flex-row flex-col lg:px-20 px-10 lg:gap-20 justify-center items-center py-10 md:text-center lg:text-start"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-        >
-          <motion.div
-            className="lg:w-[70%] w-full flex flex-col gap-5"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-          >
-            <motion.h1
-              className="font-cal-sans lg:text-[40px] text-[2rem]"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-            >
+    <section className="w-full overflow-hidden">
+      <div className="bg-[#D9F2B4]">
+        <div className="container mx-auto flex lg:flex-row flex-col lg:px-20 px-10 lg:gap-20 justify-center items-center py-10 md:text-center lg:text-start">
+          <div className="lg:w-[70%] w-full flex flex-col gap-5">
+            <h1 className="font-cal-sans lg:text-[40px] text-[2rem]">
               Besoin d’ aide?
-            </motion.h1>
-            <motion.p
-              className="text-[#282828A6]"
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-            >
+            </h1>
+            <p className="text-[#282828A6]">
               Nous avons intégré une assistance à l'aide d'une intelligence
               artificielle via un chatbot pour répondre à vos questions et vous
               assister.
-            </motion.p>
-            <motion.div
-              variants={containerVariants}
-              initial="hidden"
-              whileInView="visible"
-            >
+            </p>
+            <div>
               <Button
                 variant="secondary"
                 Icon={FaArrowRight}
@@ -68,60 +30,30 @@ const Footer = () => {
               >
                 Discuter avec l'IA
               </Button>
-            </motion.div>
-          </motion.div>
-          <motion.div
-            className="w-[30%] justify-center lg:flex hidden"
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-          >
+            </div>
+          </div>
+          <div className="w-[30%] justify-center lg:flex hidden">
             <img src="/bots.svg" alt="footer-img" className="object-contain" />
-          </motion.div>
-        </motion.div>
-      </motion.div>
-      <motion.div
-        className="w-full h-[50%]"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-      >
-        <motion.div
-          className="container flex flex-col px-20 lg:h-[336px] h-[50%] justify-center items-center"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-        >
-          <motion.h1
-            className="font-cal-sans lg:text-[37px] text-[2rem]"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-          >
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-[50%]">
+        <div className="container flex flex-col px-20 lg:h-[336px] h-[50%] justify-center items-center">
+          <h1 className="font-cal-sans lg:text-[37px] text-[2rem]">
             {" "}
             Restez serein.
-          </motion.h1>
-          <motion.h1
-            className="font-cal-sans lg:text-[37px] text-[2rem] mt-[-12px]"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-          >
+          </h1>
+          <h1 className="font-cal-sans lg:text-[37px] text-[2rem] mt-[-12px]">
             Rejoignez-nous
-          </motion.h1>
-          <motion.div
-            className="button flex gap-4 mt-[20px]"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-          >
+          </h1>
+          <div className="button flex gap-4 mt-[20px]">
             <Button variant="ghost">Se connecter</Button>
             <Button className="rounded-full">S'inscrire</Button>
-          </motion.div>
-        </motion.div>
-      </motion.div>
+          </div>
+        </div>
+      </div>
       <FooterNav />
-    </motion.section>
+    </section>
   );
 };
 

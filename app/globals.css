@@ -99,3 +99,8 @@
 .text-shadow {
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
 }
+
+.backgroundBlur {
+  background: rgba(255, 255, 255, 0.20);
+  backdrop-filter: blur(2px);
+}
