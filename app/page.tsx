@@ -17,7 +17,7 @@ const Landing: React.FC = (): JSX.Element => {
         <About />
       </section>
       <section>
-        {/* <Footer /> */}
+        <Footer />
       </section>
     </>
   );

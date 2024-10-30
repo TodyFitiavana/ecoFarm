@@ -12,7 +12,7 @@ type FarmerNavlistType = {
   urlPage?: string;
 };
 
-type aboutCardTypes = {
+type AboutCardTypes = {
   title: string;
   description: string;
   iconURL: string;
@@ -25,4 +25,4 @@ type FarmerCardTypes = {
   iconColor?: string;
 };
 
-export type { NavListType, aboutCardTypes, FarmerCardTypes, FarmerNavlistType };
+export type { NavListType, AboutCardTypes, FarmerCardTypes, FarmerNavlistType };

@@ -26,51 +26,53 @@ const LandingNav: FC = (): JSX.Element => {
   };
   return (
     <nav className="w-full overflow-hidden fixed lg:relative top-0 z-50">
-      <div className="container mx-auto py-5 px-10 flex items-center justify-between bg-white">
-        {/* Logo */}
+      <div className="bg-white">
+        <div className="container mx-auto py-5 px-10 flex items-center justify-between">
+          {/* Logo */}
 
-        <img src="/logo.svg" alt="logo" className="object-cover" />
+          <img src="/logo.svg" alt="logo" className="object-cover" />
 
-        {/* Menu icons */}
-        <div
-          className="menu-icons lg:hidden"
-          onClick={() => dispatch(toogleNav())}
-        >
-          <img
-            src="icons/menu.svg"
-            alt="menu"
-            className="object-cover w-[40px]"
-          />
-        </div>
+          {/* Menu icons */}
+          <div
+            className="menu-icons lg:hidden"
+            onClick={() => dispatch(toogleNav())}
+          >
+            <img
+              src="icons/menu.svg"
+              alt="menu"
+              className="object-cover w-[40px]"
+            />
+          </div>
 
-        {/* Menu items */}
-        <div className="lg:flex hidden">
-          <NavigationMenu>
-            <NavigationMenuList className="flex gap-7">
-              {navList.map((item, index) => (
-                <NavigationMenuItem
-                  key={index}
-                  onClick={() => handleClick(`${item.label}`)}
-                >
-                  <Link href={item.url as string} legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={cn(
-                        "hover:text-primary hover:border-b hover:border-primary",
-                        activeLink === `${item.label}` &&
-                          "border-b border-primary text-primary"
-                      )}
-                    >
-                      {item.label}
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
-              ))}
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
-        <div className="button lg:flex gap-4 hidden">
-          <Button variant="ghost">Se connecter</Button>
-          <Button className="rounded-full">S'inscrire</Button>
+          {/* Menu items */}
+          <div className="lg:flex hidden">
+            <NavigationMenu>
+              <NavigationMenuList className="flex gap-7">
+                {navList.map((item, index) => (
+                  <NavigationMenuItem
+                    key={index}
+                    onClick={() => handleClick(`${item.label}`)}
+                  >
+                    <Link href={item.url as string} legacyBehavior passHref>
+                      <NavigationMenuLink
+                        className={cn(
+                          "hover:text-primary hover:border-b hover:border-primary",
+                          activeLink === `${item.label}` &&
+                            "border-b border-primary text-primary"
+                        )}
+                      >
+                        {item.label}
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+          <div className="button lg:flex gap-4 hidden">
+            <Button variant="ghost">Se connecter</Button>
+            <Button className="rounded-full">S'inscrire</Button>
+          </div>
         </div>
       </div>
 
