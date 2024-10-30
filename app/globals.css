@@ -109,7 +109,12 @@
   opacity: 0;
 }
 
-.letters {
+.letters-staggers-down {
   opacity: 0;
   display: inline-block;
+}
+
+.letters-text-smooth {
+  opacity: 0;
+  transition: color 0.1s ease, opacity 0.3s ease;
 }

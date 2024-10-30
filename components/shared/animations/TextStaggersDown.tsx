@@ -1,27 +1,45 @@
-import { FC, useEffect, useRef } from "react";
-import { AnimatedElementProps } from "../AnimatedElement";
+import { FC, ReactNode, useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-interface TextStaggerDownProps extends AnimatedElementProps {}
+gsap.registerPlugin(ScrollTrigger);
+
+interface TextStaggerDownProps {
+  from?: { opacity?: number; x?: number; y?: number };
+  to?: { opacity?: number; x?: number; y?: number };
+  duration?: number;
+  children: ReactNode;
+}
 
 const TextStaggersDown: FC<TextStaggerDownProps> = ({
   children,
-  from,
-  to,
+  from = { opacity: 0, y: 50 },
+  to = { opacity: 1, y: 0 },
   duration = 0.2,
 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (ref.current) {
-      const letters = ref.current.querySelectorAll(".letters");
+      const letters = ref.current.querySelectorAll(".letters-staggers-down");
+
       gsap.fromTo(
         letters,
-        { ...from, opacity: 0 },
-        { ...to, opacity: 1, duration, ease: "power1.out", stagger: 0.1 }
+        { ...from },
+        {
+          ...to,
+          duration,
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: ref.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none none",
+          },
+        }
       );
     }
-  }, [to, from, duration]);
+  }, [from, to, duration]);
 
   return (
     <div ref={ref} className="inline-block">

@@ -4,9 +4,21 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export interface AnimatedElementProps {
-  from: { opacity?: number; x?: number; y?: number };
-  to: { opacity?: number; x?: number; y?: number };
+interface AnimatedElementProps {
+  from: {
+    opacity?: number;
+    x?: number;
+    y?: number;
+    rotate?: number;
+    scale?: number;
+  };
+  to: {
+    opacity?: number;
+    x?: number;
+    y?: number;
+    rotate?: number;
+    scale?: number;
+  };
   delay?: number;
   duration?: number;
   children: ReactNode;
@@ -23,23 +35,22 @@ const AnimatedElement: FC<AnimatedElementProps> = ({
 
   useEffect(() => {
     if (ref.current) {
-      gsap.from(ref.current, {
-        ...from,
-        delay,
-        duration,
-        ease: "power1.out",
-      });
-
-      gsap.to(ref.current, {
-        ...to,
-        delay,
-        duration,
-        ease: "power1.out",
-        scrollTrigger: {
-          trigger: ref.current,
-          toggleActions: "play none none none",
-        },
-      });
+      gsap.fromTo(
+        ref.current,
+        { ...from, delay, duration, ease: "power1.out" },
+        {
+          ...to,
+          delay,
+          duration,
+          ease: "power1.out",
+          scrollTrigger: {
+            trigger: ref.current,
+            start: "top 80%",
+            end: "bottom 20%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
     }
   }, [from, to, duration, delay]);
 

@@ -12,10 +12,10 @@ const HeroContent = () => {
       <div className="container mx-auto flex justify-between px-5 md:px-12 w-full">
         <div className="flex flex-col justify-start gap-5 md:pt-[18vh] w-full md:w-[600px]">
           <AnimatedElement
-            from={{ opacity: 0, x: -55 }}
+            from={{ opacity: 0, x: -45 }}
             to={{ opacity: 1, x: 0 }}
-            delay={0.4}
-            duration={0.5}
+            delay={0.3}
+            duration={0.4}
           >
             <p className="text-[#D9D9D9] backgroundBlur w-max p-2 px-3 rounded-lg text-sm">
               #1 des Plateformes à Madagascar
@@ -34,7 +34,10 @@ const HeroContent = () => {
             }}
           >
             <h1 className="text-[2.2em] md:text-[3em] lg:text-[3.3em] font-normal text-start leading-tight">
-              <SplitText text="L'agriculture Itelligente à votre portée de main" />
+              <SplitText
+                text="L'agriculture Itelligente à votre portée de main"
+                classn="letters-staggers-down"
+              />
             </h1>
           </TextStaggersDown>
 
@@ -42,7 +45,7 @@ const HeroContent = () => {
             <AnimatedElement
               from={{ y: 155 }}
               to={{ opacity: 1, y: 0 }}
-              delay={2}
+              delay={0.6}
               duration={0.4}
             >
               <Button
@@ -57,8 +60,8 @@ const HeroContent = () => {
             <AnimatedElement
               from={{ opacity: 0, y: 55 }}
               to={{ opacity: 1, y: 0 }}
-              delay={5}
-              duration={0.5}
+              delay={0.6}
+              duration={0.6}
             >
               <Button
                 iconPlacement="right"
