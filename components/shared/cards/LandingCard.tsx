@@ -1,15 +1,11 @@
 "use client";
 
 import React from "react";
-import { DotLottiePlayer } from "@dotlottie/react-player";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { motion } from "framer-motion";
-
-import { containerVariants } from "@/helpers/framerMotion/framerMotion";
 import Image from "next/image";
-import { aboutCardTypes } from "@/helpers/types/types";
+import { AboutCardTypes } from "@/helpers/types/types";
 
-const LandingCard: React.FC<aboutCardTypes> = ({
+const LandingCard: React.FC<AboutCardTypes> = ({
   iconURL,
   title,
   description,
