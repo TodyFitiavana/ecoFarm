@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Suspense } from "react";
+import React from "react";
 import { Providers } from "@/lib/redux/provider";
 import dynamic from "next/dynamic";
 
