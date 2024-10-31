@@ -118,3 +118,37 @@
   color: rgb(180, 177, 177);
   transition: color 0.1s ease, opacity 0.3s ease;
 }
+
+
+.fallingText {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.letter {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.bg-animated {
+  /* background: linear-gradient(120deg, #48ff00, #09e009, #16a022, #42f742, #98ff8f, #d7fcd5); */
+  background-size: 600% 600%;
+  animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}

@@ -2,7 +2,7 @@
 "use client";
 
 /* eslint-disable react/no-unescaped-entities */
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HeroContent from "./components/hero/HeroContent";
 import HeroState from "./components/hero/HeroState";
 

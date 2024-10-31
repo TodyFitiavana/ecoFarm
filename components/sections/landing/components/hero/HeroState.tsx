@@ -30,8 +30,8 @@ const HeroState = () => {
           <animated.span>{animatedNumber(50)}</animated.span>
         </h1>
         <AnimatedElement
-          from={{ opacity: 0, x: -55 }}
-          to={{ opacity: 1, x: 0 }}
+          from={{ opacity: 0, y: 55 }}
+          to={{ opacity: 1, y: 0 }}
           delay={0.9}
           duration={0.5}
         >
@@ -45,8 +45,8 @@ const HeroState = () => {
           <animated.span>{animatedNumber(150)}</animated.span>
         </h1>
         <AnimatedElement
-          from={{ opacity: 0, x: -55 }}
-          to={{ opacity: 1, x: 0 }}
+          from={{ opacity: 0, y: 55 }}
+          to={{ opacity: 1, y: 0 }}
           delay={0.9}
           duration={0.5}
         ><p className="text-[#8E8E8E] flex-grow">Produits agricoles</p>
@@ -57,8 +57,8 @@ const HeroState = () => {
           <animated.span>{animatedNumber(125)}</animated.span>
         </h1>
         <AnimatedElement
-          from={{ opacity: 0, x: -55 }}
-          to={{ opacity: 1, x: 0 }}
+          from={{ opacity: 0, y: 55 }}
+          to={{ opacity: 1, y: 0 }}
           delay={0.9}
           duration={0.5}
         ><p className="text-[#8E8E8E] flex-grow">Tonnes de productions</p>

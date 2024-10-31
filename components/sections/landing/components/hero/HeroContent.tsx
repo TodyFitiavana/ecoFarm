@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+/* eslint-disable @next/next/no-img-element */
 import AnimatedElement from "@/components/shared/AnimatedElement";
 import { Button } from "@/components/ui/button";
 import { BsArrowUpRightCircle } from "react-icons/bs";
