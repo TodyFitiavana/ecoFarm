@@ -2,8 +2,6 @@ import { FC, ReactNode, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface AnimatedElementProps {
   from: {
     opacity?: number;
@@ -34,6 +32,7 @@ const AnimatedElement: FC<AnimatedElementProps> = ({
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     if (ref.current) {
       gsap.fromTo(
         ref.current,

@@ -1,25 +1,46 @@
 "use client";
 
-import LandingNav from "@/components/shared/navbars/LandingNav";
-import About from "@/components/sections/landing/About";
-import Footer from "@/components/sections/landing/Footer";
-import Hero from "@/components/sections/landing/Hero";
 import React, { Suspense } from "react";
+import { Providers } from "@/lib/redux/provider";
+import dynamic from "next/dynamic";
+
+const DynamicLandingNav = dynamic(
+  () => import("@/components/shared/navbars/LandingNav"),
+  {  loading: () => <LoadingScreen /> }
+);
+const DynamicHero = dynamic(
+  () => import("@/components/sections/landing/Hero"),
+  {  loading: () => <LoadingScreen /> }
+);
+const DynamicAbout = dynamic(
+  () => import("@/components/sections/landing/About"),
+  {  loading: () => <LoadingScreen /> }
+);
+const DynamicFooter = dynamic(
+  () => import("@/components/sections/landing/Footer"),
+  {  loading: () => <LoadingScreen /> }
+);
+
+const LoadingScreen = () => (
+  <div className="w-screen h-screen bg-red-300 fixed z-50 flex items-center justify-center">
+    loading...
+  </div>
+);
 
 const Landing: React.FC = (): JSX.Element => {
   return (
-    <Suspense fallback>
+    <Providers>
       <section className="landing-hero">
-        <LandingNav />
-        <Hero />
+        <DynamicLandingNav />
+        <DynamicHero />
       </section>
       <section className="landing-About">
-        <About />
+        <DynamicAbout />
       </section>
       <section>
-        <Footer />
+        <DynamicFooter />
       </section>
-    </Suspense>
+    </Providers>
   );
 };
 

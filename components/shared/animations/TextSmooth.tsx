@@ -2,8 +2,6 @@ import { FC, ReactNode, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface TextSmoothProps {
   color?: string;
   duration?: number;
@@ -20,6 +18,7 @@ const TextSmooth: FC<TextSmoothProps> = ({
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     const letters = ref.current?.querySelectorAll(".letters-text-smooth");
 
     if (letters && letters.length > 0) {

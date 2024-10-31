@@ -2,8 +2,6 @@ import { FC, ReactNode, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
-
 interface TextStaggerDownProps {
   from?: { opacity?: number; x?: number; y?: number };
   to?: { opacity?: number; x?: number; y?: number };
@@ -20,6 +18,7 @@ const TextStaggersDown: FC<TextStaggerDownProps> = ({
   const ref = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     if (ref.current) {
       const letters = ref.current.querySelectorAll(".letters-staggers-down");
 
