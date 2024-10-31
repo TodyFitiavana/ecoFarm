@@ -15,7 +15,7 @@ const TextStaggersDown: FC<TextStaggerDownProps> = ({
   children,
   from = { opacity: 0, y: 50 },
   to = { opacity: 1, y: 0 },
-  duration = 0.2,
+  duration = 0.22,
 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
 

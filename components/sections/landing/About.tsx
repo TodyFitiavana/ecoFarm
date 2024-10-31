@@ -12,7 +12,7 @@ const About: React.FC = (): JSX.Element => {
         <div className="landing-about__container bg-grey02 w-full px-5 pt-14 pb-5 md:p-14 flex flex-col items-center rounded-lg md:rounded-[34px]">
           <header className="text-center">
             <TextSmooth
-              duration={0.6}
+              duration={0.7}
               container=".landing-about"
               color="#282828"
             >
@@ -23,18 +23,11 @@ const About: React.FC = (): JSX.Element => {
                 />
               </h2>
             </TextSmooth>
-            <TextSmooth
-              duration={0.01}
-              container=".landing-about"
-              color="rgba(40, 40, 40, 0.65)"
-            >
-              <p className="w-full md:w-[680px] mt-3">
-                <SplitText
-                  text="Nous visons à aider les agriculteurs à améliorer leur production et à vendre leurs produits à des prix équitables. Elle se décline en trois aspects clés."
-                  classn="letters-text-smooth"
-                />
-              </p>
-            </TextSmooth>
+            <p className="w-full md:w-[680px] mt-3 text-secondary-foreground">
+              Nous visons à aider les agriculteurs à améliorer leur production
+              et à vendre leurs produits à des prix équitables. Elle se décline
+              en trois aspects clés.{" "}
+            </p>
           </header>
           <div className="content grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-16">
             {aboutCardData.map((item, index) => (
@@ -42,8 +35,8 @@ const About: React.FC = (): JSX.Element => {
                 key={index}
                 from={{
                   opacity: 0,
-                  x: index % 2 === 0 ? -250 : undefined,
-                  rotate: index % 2 === 0 ? -80 : undefined,
+                  x: index === aboutCardData.length - 1 ? 250 : -250,
+                  rotate: index === aboutCardData.length - 1 ? 80 : -80,
                   scale: index % 2 !== 0 ? 1 : undefined,
                 }}
                 to={{
@@ -53,7 +46,7 @@ const About: React.FC = (): JSX.Element => {
                   scale: index % 2 !== 0 ? 1 : undefined,
                   y: index % 2 !== 0 ? 0 : undefined,
                 }}
-                delay={(index + 4) * 0.3}
+                delay={(index + 2) * 0.4}
                 duration={0.5}
               >
                 <LandingCard {...item} />

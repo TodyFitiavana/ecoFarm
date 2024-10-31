@@ -6,7 +6,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 interface TextSmoothProps {
   color?: string;
-  duration?: number; // Marquer `duration` comme optionnel avec une valeur par défaut
+  duration?: number;
   container: string;
   children: ReactNode;
 }
@@ -25,9 +25,8 @@ const TextSmooth: FC<TextSmoothProps> = ({
     if (letters && letters.length > 0) {
       const anim = gsap.to(letters, {
         color: color,
-        opacity: 1, 
         duration: duration,
-        stagger: 0.02,
+        stagger: 0.1,
         paused: true,
       });
 

@@ -4,11 +4,11 @@ import LandingNav from "@/components/shared/navbars/LandingNav";
 import About from "@/components/sections/landing/About";
 import Footer from "@/components/sections/landing/Footer";
 import Hero from "@/components/sections/landing/Hero";
-import React from "react";
+import React, { Suspense } from "react";
 
 const Landing: React.FC = (): JSX.Element => {
   return (
-    <>
+    <Suspense fallback>
       <section className="landing-hero">
         <LandingNav />
         <Hero />
@@ -19,7 +19,7 @@ const Landing: React.FC = (): JSX.Element => {
       <section>
         <Footer />
       </section>
-    </>
+    </Suspense>
   );
 };
 

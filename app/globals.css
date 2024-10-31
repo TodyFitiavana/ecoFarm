@@ -115,6 +115,6 @@
 }
 
 .letters-text-smooth {
-  opacity: 0;
+  color: rgb(180, 177, 177);
   transition: color 0.1s ease, opacity 0.3s ease;
 }
