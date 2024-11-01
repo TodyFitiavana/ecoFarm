@@ -30,26 +30,29 @@ const AnimatedElement: FC<AnimatedElementProps> = ({
   duration = 1,
 }): JSX.Element => {
   const ref = useRef<HTMLDivElement | null>(null);
+  const animationRef = useRef<gsap.core.Tween | null>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     if (ref.current) {
-      gsap.fromTo(
-        ref.current,
-        { ...from, delay, duration, ease: "power1.out" },
-        {
-          ...to,
-          delay,
-          duration,
-          ease: "power1.out",
-          scrollTrigger: {
-            trigger: ref.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
+      if (!animationRef.current) {
+        animationRef.current = gsap.fromTo(
+          ref.current,
+          { ...from, delay, duration, ease: "power1.out" },
+          {
+            ...to,
+            delay,
+            duration,
+            ease: "power1.out",
+            scrollTrigger: {
+              trigger: ref.current,
+              start: "top 80%",
+              end: "bottom 20%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      }
     }
   }, [from, to, duration, delay]);
 

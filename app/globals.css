@@ -152,3 +152,7 @@
     background-position: 0% 50%;
   }
 }
+
+.loading-screen {
+  background-color: rgba(180, 177, 177, 0.116)!important;
+}

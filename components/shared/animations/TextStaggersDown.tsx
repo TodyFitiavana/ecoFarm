@@ -1,12 +1,12 @@
 import { FC, ReactNode, useEffect, useRef } from "react";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 interface TextStaggerDownProps {
   from?: { opacity?: number; x?: number; y?: number };
   to?: { opacity?: number; x?: number; y?: number };
   duration?: number;
   children: ReactNode;
+  delay?: number;
 }
 
 const TextStaggersDown: FC<TextStaggerDownProps> = ({
@@ -14,31 +14,29 @@ const TextStaggersDown: FC<TextStaggerDownProps> = ({
   from = { opacity: 0, y: 50 },
   to = { opacity: 1, y: 0 },
   duration = 0.22,
+  delay,
 }) => {
   const ref = useRef<HTMLDivElement | null>(null);
+  const animationRef = useRef<gsap.core.Tween | null>(null);
 
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
     if (ref.current) {
       const letters = ref.current.querySelectorAll(".letters-staggers-down");
 
-      gsap.fromTo(
-        letters,
-        { ...from },
-        {
-          ...to,
-          duration,
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: ref.current,
-            start: "top 80%",
-            end: "bottom 20%",
-            toggleActions: "play none none none",
-          },
-        }
-      );
+      if (!animationRef.current) {
+        animationRef.current = gsap.fromTo(
+          letters,
+          { ...from },
+          {
+            ...to,
+            duration,
+            delay: delay,
+            stagger: 0.1,
+          }
+        );
+      }
     }
-  }, [from, to, duration]);
+  }, [from, to, duration, delay]);
 
   return (
     <div ref={ref} className="inline-block">

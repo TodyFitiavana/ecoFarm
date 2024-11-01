@@ -25,7 +25,7 @@ const LandingNav: FC = (): JSX.Element => {
     setActiveLink(link);
   };
   return (
-    <nav className="w-full overflow-hidden fixed lg:relative top-0 z-50">
+    <nav className="w-full overflow-hidden fixed lg:relative top-0 z-40">
       <div className="bg-white">
         <div className="lg:container mx-auto py-5 px-5 md:px-10 flex items-center justify-between">
           {/* Logo */}

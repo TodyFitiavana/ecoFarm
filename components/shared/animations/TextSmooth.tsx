@@ -7,12 +7,14 @@ interface TextSmoothProps {
   duration?: number;
   container: string;
   children: ReactNode;
+  delay?: number;
 }
 
 const TextSmooth: FC<TextSmoothProps> = ({
   children,
   container,
   duration = 0.2,
+  delay,
   color,
 }): JSX.Element => {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -27,6 +29,7 @@ const TextSmooth: FC<TextSmoothProps> = ({
         duration: duration,
         stagger: 0.1,
         paused: true,
+        delay: delay,
       });
 
       ScrollTrigger.create({

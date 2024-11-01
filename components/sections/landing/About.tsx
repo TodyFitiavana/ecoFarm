@@ -14,20 +14,35 @@ const About: React.FC = (): JSX.Element => {
             <TextSmooth
               duration={0.7}
               container=".landing-about"
+              delay={0.9}
               color="#282828"
             >
-              <h2 className="font-semibold text-2xl lg:text-3xl">
-                <SplitText
-                  text="Qui sommes-Nous?"
-                  classn="letters-text-smooth"
-                />
-              </h2>
+              <AnimatedElement
+                from={{ x: -55, opacity: 0 }}
+                to={{ x: 0, opacity: 1 }}
+                duration={0.3}
+                delay={0.5}
+              >
+                <h2 className="font-semibold text-2xl lg:text-3xl">
+                  <SplitText
+                    text="Qui sommes-Nous?"
+                    classn="letters-text-smooth"
+                  />
+                </h2>
+              </AnimatedElement>
             </TextSmooth>
-            <p className="w-full md:w-[680px] mt-3 text-secondary-foreground">
-              Nous visons à aider les agriculteurs à améliorer leur production
-              et à vendre leurs produits à des prix équitables. Elle se décline
-              en trois aspects clés.{" "}
-            </p>
+            <AnimatedElement
+              from={{ y: -55, opacity: 0 }}
+              to={{ y: 0, opacity: 1 }}
+              duration={0.63}
+              delay={0.8}
+            >
+              <p className="w-full md:w-[680px] mt-3 text-secondary-foreground">
+                Nous visons à aider les agriculteurs à améliorer leur production
+                et à vendre leurs produits à des prix équitables. Elle se
+                décline en trois aspects clés.
+              </p>
+            </AnimatedElement>
           </header>
           <div className="content grid gap-5 md:grid-cols-2 lg:grid-cols-3 mt-16">
             {aboutCardData.map((item, index) => (
@@ -46,7 +61,7 @@ const About: React.FC = (): JSX.Element => {
                   scale: index % 2 !== 0 ? 1 : undefined,
                   y: index % 2 !== 0 ? 0 : undefined,
                 }}
-                delay={(index + 2) * 0.4}
+                delay={(index + 2.5) * 0.4}
                 duration={0.5}
               >
                 <LandingCard {...item} />
